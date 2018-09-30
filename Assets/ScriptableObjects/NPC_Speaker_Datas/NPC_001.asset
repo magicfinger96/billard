@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcb998a6918114b42bd25cb098a7e12e, type: 3}
+  m_Name: NPC_001
+  m_EditorClassIdentifier: 
+  name: John
+  hasAlreadyMeetPlayer: 1
+  discussionNeverMeet:
+  - {fileID: 11400000, guid: 200a61391919be04b94bd06c2424796e, type: 2}
+  - {fileID: 11400000, guid: e5b805097fbae2a478b0c2bb6a8803ac, type: 2}
+  discussionsAlreadyMeet:
+  - {fileID: 11400000, guid: 06602d0ac4890fa40a4c94ee52018bb3, type: 2}
+  - {fileID: 11400000, guid: 5fd1eeafcad2d0b4eb80c91169512adc, type: 2}
+  - {fileID: 11400000, guid: bf49c19b5c9ea854f97423f07b9ca79a, type: 2}

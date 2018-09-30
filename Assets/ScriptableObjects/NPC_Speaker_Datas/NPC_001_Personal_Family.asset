@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d4102b4c209fad4c8cf9ec4fb147e10, type: 3}
+  m_Name: NPC_001_Personal_Family
+  m_EditorClassIdentifier: 
+  title: Vous avez de la famille ?
+  content:
+  - "Ouais j'ai 2 gar\xE7ons et 1 fille, et j'avais une femme...\nElle a \xE9t\xE9
+    tu\xE9 par ses saloperies de bandit.."
+  - "J'aime pas trop en parler \xE0 vrai dire.."
+  relatedDiscussions: []

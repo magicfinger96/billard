@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d4102b4c209fad4c8cf9ec4fb147e10, type: 3}
+  m_Name: NPC_001_Personal_Job
+  m_EditorClassIdentifier: 
+  title: Vous travaillez ?
+  content:
+  - "Ouais mon p'tit gars j'suis sh\xE9rif ... Enfin j'\xE9tais sh\xE9rif de c'te
+    p'tite ville, mais c'est fini depuis que ma femme est mort..."
+  - "Maintenant je reste ici toute la journ\xE9e \xE0 attendre que peut \xEAtre ces
+    saloperies de bandit se repointent."
+  relatedDiscussions:
+  - {fileID: 11400000, guid: f987d9f5ea7a4ef489a3bdd6c6d47b3c, type: 2}
+  - {fileID: 11400000, guid: 4de8bca0c7bf77948b5423e025fd5d7d, type: 2}
