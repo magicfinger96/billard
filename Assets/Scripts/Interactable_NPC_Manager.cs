@@ -7,6 +7,7 @@ public class Interactable_NPC_Manager : MonoBehaviour {
 
     [SerializeField]
     private List<Interactable_NPC> speakers;
+    private bool IsWriting;
     private Interactable_NPC currentSpeaker;
     private NPC_Discussion_Scriptable_Object currentDiscussion;
 
@@ -23,6 +24,7 @@ public class Interactable_NPC_Manager : MonoBehaviour {
 
     // Use this for initialization
     private void Start () {
+        IsWriting = false;
         currentSpeaker = null;
         currentDiscussion = null;
         topicsPanels = new List<GameObject>();
@@ -41,6 +43,11 @@ public class Interactable_NPC_Manager : MonoBehaviour {
         }
     }
 	
+    public bool DiscussionInProcess()
+    {
+        return currentSpeaker != null;
+    }
+
     public void SetCurrentSpeaker(Interactable_NPC speaker)
     {
         currentSpeaker = speaker;
