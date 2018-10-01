@@ -10,6 +10,7 @@ public class Interactable_NPC_Manager : MonoBehaviour {
     private bool IsWriting;
     private Interactable_NPC currentSpeaker;
     private NPC_Discussion_Scriptable_Object currentDiscussion;
+    private int currentDiscussionContentIndex;
 
     [SerializeField]
     private Text speakerName;
@@ -27,6 +28,7 @@ public class Interactable_NPC_Manager : MonoBehaviour {
         IsWriting = false;
         currentSpeaker = null;
         currentDiscussion = null;
+        currentDiscussionContentIndex = -1;
         topicsPanels = new List<GameObject>();
         RetrieveTopicsPanels();
 	}
@@ -50,25 +52,44 @@ public class Interactable_NPC_Manager : MonoBehaviour {
 
     public void SetCurrentSpeaker(Interactable_NPC speaker)
     {
+        topicGUI.SetActive(false);
+        discussionGUI.SetActive(false);
         currentSpeaker = speaker;
         currentDiscussion = speaker.GetIntroDiscussion();
+        currentDiscussionContentIndex = 0;
+
+        speakerName.text = currentSpeaker.Npc.name;
         BuildDiscussionArea();
-        BuildRelatedDiscussionsArea();
     }
 
     public void SetCurrentSpeakerTopic(int topicIndex)
     {
         NPC_Discussion_Scriptable_Object nextDiscussion = currentDiscussion.relatedDiscussions[topicIndex];
         currentDiscussion = nextDiscussion;
+        currentDiscussionContentIndex = 0;
+        topicGUI.SetActive(false);
+        discussionGUI.SetActive(false);
         BuildDiscussionArea();
         BuildRelatedDiscussionsArea();
     }
 
+    public void SetNextDiscussionContent()
+    {
+        if(currentDiscussion != null && currentDiscussionContentIndex < currentDiscussion.content.Count - 1)
+        {
+            currentDiscussionContentIndex++;
+            BuildDiscussionArea();
+        }
+    }
+
     private void BuildDiscussionArea()
     {
-        speakerName.text = currentSpeaker.Npc.name;
-        discussionArea.text = currentDiscussion.content[0];
+        discussionArea.text = currentDiscussion.content[currentDiscussionContentIndex];
         discussionGUI.SetActive(true);
+        if(currentDiscussionContentIndex == currentDiscussion.content.Count-1)
+        {
+            BuildRelatedDiscussionsArea();
+        }
     }
 
     private void BuildRelatedDiscussionsArea()
