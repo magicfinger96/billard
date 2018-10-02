@@ -7,6 +7,7 @@ TagManager:
   - TopicPanel
   - CameraPositionning
   - NPC
+  - PlayerGFX
   layers:
   - Default
   - TransparentFX

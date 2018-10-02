@@ -6,10 +6,15 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour {
 
     private Rigidbody rg;
-    private new MeshRenderer renderer;
+    private GameObject gfx;
 
     [SerializeField]
     private float speed = 5.0f;
+    public float Speed
+    {
+        get { return speed; }
+        set { speed = value; }
+    }
     [SerializeField]
     private float speedRotation = 2.0f;
     [SerializeField]
@@ -19,23 +24,42 @@ public class PlayerController : MonoBehaviour {
     private Interactable_NPC_Manager NPC_Manager;
     [SerializeField]
     private Camera TPSCamera;
-    private Transform saveCameraInfo;
+    private Vector3 localTransformSave;
+    private Quaternion localRotationSave;
 
     [SerializeField]
     private Text interact;
     private Interactable_NPC PNJToInteract;
 
+    public Vector3 velocityGlobal;
+
 	void Start ()
     {
         PNJToInteract = null;
         rg = GetComponent<Rigidbody>();
-        renderer = GetComponentInChildren<MeshRenderer>();
-	}
+        FindGfxNode();
+        localTransformSave = TPSCamera.transform.localPosition;
+        localRotationSave = TPSCamera.transform.localRotation;
+    }
+
+    void FindGfxNode()
+    {
+        Transform[] transforms = GetComponentsInChildren<Transform>();
+        foreach(Transform t in transforms)
+        {
+            if(t.tag == "PlayerGFX")
+            {
+                gfx = t.gameObject;
+                return;
+            }
+        }
+    }
 	
 	void Update ()
     {
-        if(!NPC_Manager.DiscussionInProcess())
-        { 
+        if (!NPC_Manager.DiscussionInProcess())
+        {
+            Debug.Log("LOL");
             float x = Input.GetAxisRaw("Horizontal");
             float yRotation = Input.GetAxisRaw("Mouse X");
             float z = Input.GetAxisRaw("Vertical");
@@ -45,12 +69,14 @@ public class PlayerController : MonoBehaviour {
 
             Vector3 velocity = (verticalMovement + horizontalMovement).normalized * speed;
             Vector3 rotation = new Vector3(0f, yRotation, 0f) * speedRotation;
+            velocityGlobal = velocity;
 
             PerformMovement(velocity);
             PerformRotation(rotation);
 
             if(IsNearPNJ())
             {
+                Debug.Log("TA MERE");
                 interact.gameObject.SetActive(true);
             }
             else
@@ -59,8 +85,9 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
-        if(interact.enabled && Input.GetKeyDown(KeyCode.F))
+        if(interact.enabled && PNJToInteract != null && Input.GetKeyDown(KeyCode.F))
         {
+            Debug.Log("ICI");
             EnterInteractionWithNPC();
         }
     }
@@ -68,25 +95,23 @@ public class PlayerController : MonoBehaviour {
     public void EnterInteractionWithNPC()
     {
         interact.gameObject.SetActive(false);
-        saveCameraInfo = TPSCamera.transform;
-        Debug.Log(saveCameraInfo.position);
         PNJToInteract.Interact();
-        renderer.gameObject.SetActive(false);
+        gfx.SetActive(false);
     }
 
     public void ExitInteractionWithNPC()
     {
-        renderer.gameObject.SetActive(true);
-        Debug.Log(saveCameraInfo.position);
-        TPSCamera.transform.position = saveCameraInfo.position;
-        TPSCamera.transform.rotation = saveCameraInfo.rotation;
+        gfx.SetActive(true);
+        TPSCamera.transform.localPosition = localTransformSave;
+        TPSCamera.transform.localRotation = localRotationSave;
     }
 
     private bool IsNearPNJ()
     {
         int layerMask = LayerMask.GetMask("NPC");
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, distanceInteract, layerMask))
+        Vector3 addingToCenter = new Vector3(0f, transform.localScale.y / 2, 0f);
+        if (Physics.Raycast(transform.position + addingToCenter, transform.forward, out hit, distanceInteract, layerMask))
         {
             if(hit.transform.tag == "NPC")
             {
@@ -94,6 +119,7 @@ public class PlayerController : MonoBehaviour {
                 return true;
             }
         }
+        PNJToInteract = null;
         return false;
     }
 
