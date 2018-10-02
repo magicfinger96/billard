@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -21,3 +21,4 @@ MonoBehaviour:
   relatedDiscussions:
   - {fileID: 11400000, guid: c9a674529b56a9d428bae40bdb8a16f5, type: 2}
   - {fileID: 11400000, guid: cc765a57eb8b3db4b9ab4fdd3defab21, type: 2}
+  - {fileID: 11400000, guid: 0dd5bbe8f73288346b2eaf57df3592ca, type: 2}

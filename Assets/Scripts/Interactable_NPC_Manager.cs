@@ -6,7 +6,10 @@ using UnityEngine.UI;
 public class Interactable_NPC_Manager : MonoBehaviour {
 
     [SerializeField]
-    private List<Interactable_NPC> speakers;
+    private Camera mainCamera;
+    [SerializeField]
+    private PlayerController player;
+
     private bool IsWriting;
     private Interactable_NPC currentSpeaker;
     private NPC_Discussion_Scriptable_Object currentDiscussion;
@@ -16,11 +19,13 @@ public class Interactable_NPC_Manager : MonoBehaviour {
     private Text speakerName;
     [SerializeField]
     private Text discussionArea;
-
     [SerializeField]
     private GameObject discussionGUI;
     [SerializeField]
     private GameObject topicGUI;
+    [SerializeField]
+    private GameObject nextGUI;
+
     private List<GameObject> topicsPanels;
 
     // Use this for initialization
@@ -50,13 +55,27 @@ public class Interactable_NPC_Manager : MonoBehaviour {
         return currentSpeaker != null;
     }
 
+    private void EndOfDiscussion()
+    {
+        topicGUI.SetActive(false);
+        discussionGUI.SetActive(false);
+        nextGUI.SetActive(false);
+        currentSpeaker = null;
+        currentDiscussion = null;
+        currentDiscussionContentIndex = -1;
+        player.ExitInteractionWithNPC();
+    }
+
     public void SetCurrentSpeaker(Interactable_NPC speaker)
     {
         topicGUI.SetActive(false);
         discussionGUI.SetActive(false);
+        nextGUI.SetActive(false);
         currentSpeaker = speaker;
         currentDiscussion = speaker.GetIntroDiscussion();
         currentDiscussionContentIndex = 0;
+        mainCamera.transform.position = currentSpeaker.PositionForInteraction.position;
+        mainCamera.transform.LookAt(currentSpeaker.transform.position);
 
         speakerName.text = currentSpeaker.Npc.name;
         BuildDiscussionArea();
@@ -69,8 +88,15 @@ public class Interactable_NPC_Manager : MonoBehaviour {
         currentDiscussionContentIndex = 0;
         topicGUI.SetActive(false);
         discussionGUI.SetActive(false);
-        BuildDiscussionArea();
-        BuildRelatedDiscussionsArea();
+
+        if(currentDiscussion.content.Count == 0 && currentDiscussion.relatedDiscussions.Count == 0)
+        {
+            EndOfDiscussion();
+        }
+        else
+        {
+            BuildDiscussionArea();
+        }
     }
 
     public void SetNextDiscussionContent()
@@ -86,9 +112,11 @@ public class Interactable_NPC_Manager : MonoBehaviour {
     {
         discussionArea.text = currentDiscussion.content[currentDiscussionContentIndex];
         discussionGUI.SetActive(true);
-        if(currentDiscussionContentIndex == currentDiscussion.content.Count-1)
+        nextGUI.SetActive(true);
+        if (currentDiscussionContentIndex == currentDiscussion.content.Count-1)
         {
             BuildRelatedDiscussionsArea();
+            nextGUI.SetActive(false);
         }
     }
 

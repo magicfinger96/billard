@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -13,6 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: 
   content:
-  - "J'peux savoir pourquoi tu me regardes comme \xE7a ?"
+  - "Fichue crampe ! Quel bon vent t'am\xE9ne ?"
   relatedDiscussions:
   - {fileID: 11400000, guid: 1bf2f50232371084ba2a20710d155274, type: 2}
+  - {fileID: 11400000, guid: 0dd5bbe8f73288346b2eaf57df3592ca, type: 2}

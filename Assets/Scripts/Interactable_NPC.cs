@@ -16,12 +16,36 @@ public class Interactable_NPC : MonoBehaviour
     /* Logic REQUIREMENT */
     [SerializeField]
     private Interactable_NPC_Manager manager;
+    private Transform positionForInteraction;
+    public Transform PositionForInteraction
+    {
+        get { return positionForInteraction; }
+        private set { }
+    }
 
-    private void OnMouseDown()
+    private void Start()
+    {
+        npc.hasAlreadyMeetPlayer = false;
+        GetCameraPositionFromComponent();
+    }
+
+    private void GetCameraPositionFromComponent()
+    {
+        Transform[] transforms = GetComponentsInChildren<Transform>();
+        foreach(Transform t in transforms)
+        {
+            if(t.tag == "CameraPositionning")
+            {
+                positionForInteraction = t;
+            }
+        }
+    }
+
+    public void Interact()
     {
         manager.SetCurrentSpeaker(this);
     }
-    
+
     public NPC_Discussion_Scriptable_Object GetIntroDiscussion()
     {
         if(npc.hasAlreadyMeetPlayer)
@@ -30,6 +54,7 @@ public class Interactable_NPC : MonoBehaviour
         }
         else
         {
+            npc.hasAlreadyMeetPlayer = true;
             return RandomNotAlreadyMeetIntro();
         }
     }
