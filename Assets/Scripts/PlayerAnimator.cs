@@ -18,7 +18,17 @@ public class PlayerAnimator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float speedPercent = controller.velocityGlobal.magnitude / controller.Speed;
+        float speedPercent;
+        if (controller.CurrentSpeed == 0)
+        {
+            speedPercent = 0;
+        }
+        else
+        {
+            speedPercent = controller.velocityGlobal.magnitude / controller.CurrentSpeed;
+        }
+        
+        Debug.Log(speedPercent);
         animator.SetFloat("speedPercent", speedPercent, locomotionAnimationSmoothTime, Time.deltaTime);
 	}
 }

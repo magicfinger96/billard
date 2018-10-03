@@ -9,12 +9,27 @@ public class PlayerController : MonoBehaviour {
     private GameObject gfx;
 
     [SerializeField]
-    private float speed = 5.0f;
-    public float Speed
+    private float speedBackward;
+    public float SpeedBackward
     {
-        get { return speed; }
-        set { speed = value; }
+        get { return speedBackward; }
+        set { speedBackward = value; }
     }
+    [SerializeField]
+    private float speedForward = 5.0f;
+    public float SpeedForward
+    {
+        get { return speedForward; }
+        set { speedForward = value; }
+    }
+    private float currentSpeed;
+    public float CurrentSpeed
+    {
+        get { return currentSpeed; }
+        private set { }
+    }
+
+
     [SerializeField]
     private float speedRotation = 2.0f;
     [SerializeField]
@@ -35,6 +50,7 @@ public class PlayerController : MonoBehaviour {
 
 	void Start ()
     {
+        currentSpeed = 0;
         PNJToInteract = null;
         rg = GetComponent<Rigidbody>();
         FindGfxNode();
@@ -59,15 +75,23 @@ public class PlayerController : MonoBehaviour {
     {
         if (!NPC_Manager.DiscussionInProcess())
         {
-            Debug.Log("LOL");
             float x = Input.GetAxisRaw("Horizontal");
             float yRotation = Input.GetAxisRaw("Mouse X");
             float z = Input.GetAxisRaw("Vertical");
 
+            if(z > 0)
+            {
+                currentSpeed = speedForward;
+            }
+            else if(z < 0)
+            {
+                currentSpeed = speedBackward;
+            }
+
             Vector3 verticalMovement = transform.right * x;
             Vector3 horizontalMovement = transform.forward * z;
 
-            Vector3 velocity = (verticalMovement + horizontalMovement).normalized * speed;
+            Vector3 velocity = (verticalMovement + horizontalMovement).normalized * currentSpeed;
             Vector3 rotation = new Vector3(0f, yRotation, 0f) * speedRotation;
             velocityGlobal = velocity;
 
@@ -76,7 +100,6 @@ public class PlayerController : MonoBehaviour {
 
             if(IsNearPNJ())
             {
-                Debug.Log("TA MERE");
                 interact.gameObject.SetActive(true);
             }
             else
@@ -87,7 +110,6 @@ public class PlayerController : MonoBehaviour {
 
         if(interact.enabled && PNJToInteract != null && Input.GetKeyDown(KeyCode.F))
         {
-            Debug.Log("ICI");
             EnterInteractionWithNPC();
         }
     }
