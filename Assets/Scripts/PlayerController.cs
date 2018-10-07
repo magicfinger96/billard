@@ -29,6 +29,10 @@ public class PlayerController : MonoBehaviour {
         private set { }
     }
 
+    public float horizontalIn;
+    public float verticalIn;
+    public float rotIn;
+
 
     [SerializeField]
     private float speedRotation = 2.0f;
@@ -50,7 +54,9 @@ public class PlayerController : MonoBehaviour {
 
 	void Start ()
     {
-        currentSpeed = 0;
+        horizontalIn = 0f;
+        verticalIn = 0f;
+        currentSpeed = speedForward;
         PNJToInteract = null;
         rg = GetComponent<Rigidbody>();
         FindGfxNode();
@@ -79,7 +85,11 @@ public class PlayerController : MonoBehaviour {
             float yRotation = Input.GetAxisRaw("Mouse X");
             float z = Input.GetAxisRaw("Vertical");
 
-            if(z > 0)
+            horizontalIn = x;
+            verticalIn = z;
+            rotIn = yRotation;
+
+            if (z > 0)
             {
                 currentSpeed = speedForward;
             }

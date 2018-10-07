@@ -28,7 +28,8 @@ public class PlayerAnimator : MonoBehaviour {
             speedPercent = controller.velocityGlobal.magnitude / controller.CurrentSpeed;
         }
         
-        Debug.Log(speedPercent);
-        animator.SetFloat("speedPercent", speedPercent, locomotionAnimationSmoothTime, Time.deltaTime);
-	}
+        Debug.Log(controller.horizontalIn);
+        animator.SetFloat("Horizontal", controller.horizontalIn, locomotionAnimationSmoothTime, Time.deltaTime);
+        animator.SetFloat("Vertical", controller.verticalIn, locomotionAnimationSmoothTime, Time.deltaTime);
+    }
 }
