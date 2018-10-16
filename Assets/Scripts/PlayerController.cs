@@ -6,7 +6,16 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour {
 
     private Rigidbody rg;
+
+    #region toDelete
     private GameObject gfx;
+
+    private int xp;
+    public int Xp
+    {
+        get { return xp; }
+        set { xp = value; }
+    }
 
     [SerializeField]
     private float speedBackward;
@@ -29,15 +38,21 @@ public class PlayerController : MonoBehaviour {
         private set { }
     }
 
+
+    [SerializeField]
+    private float speedRotation = 2.0f;
+
+    [SerializeField]
+    private float distanceInteract = 2.0f;
+
+    #endregion
+
     public float horizontalIn;
     public float verticalIn;
     public float rotIn;
 
 
-    [SerializeField]
-    private float speedRotation = 2.0f;
-    [SerializeField]
-    private float distanceInteract = 2.0f;
+
 
     [SerializeField]
     private Interactable_NPC_Manager NPC_Manager;
@@ -56,7 +71,7 @@ public class PlayerController : MonoBehaviour {
     {
         horizontalIn = 0f;
         verticalIn = 0f;
-        currentSpeed = speedForward;
+        currentSpeed = 0f;
         PNJToInteract = null;
         rg = GetComponent<Rigidbody>();
         FindGfxNode();
@@ -64,6 +79,7 @@ public class PlayerController : MonoBehaviour {
         localRotationSave = TPSCamera.transform.localRotation;
     }
 
+    #region toDelete
     void FindGfxNode()
     {
         Transform[] transforms = GetComponentsInChildren<Transform>();
@@ -76,8 +92,9 @@ public class PlayerController : MonoBehaviour {
             }
         }
     }
-	
-	void Update ()
+    #endregion
+
+    void Update ()
     {
         if (!NPC_Manager.DiscussionInProcess())
         {
@@ -89,11 +106,11 @@ public class PlayerController : MonoBehaviour {
             verticalIn = z;
             rotIn = yRotation;
 
-            if (z > 0)
+            if (z > 0 && x == 0)
             {
                 currentSpeed = speedForward;
             }
-            else if(z < 0)
+            else if(z < 0 || x != 0)
             {
                 currentSpeed = speedBackward;
             }
@@ -155,6 +172,7 @@ public class PlayerController : MonoBehaviour {
         return false;
     }
 
+    #region toDelete
     void PerformMovement(Vector3 velocity)
     {
         rg.MovePosition(rg.position + velocity * Time.deltaTime);
@@ -164,4 +182,5 @@ public class PlayerController : MonoBehaviour {
     {
         rg.MoveRotation(rg.rotation * Quaternion.Euler(rotation));
     }
+    #endregion
 }
