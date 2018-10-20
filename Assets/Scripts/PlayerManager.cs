@@ -11,6 +11,16 @@ public class PlayerManager : MonoBehaviour {
     private PlayerAttributes attributs;
     private PlayerGraphics graphic;
     #endregion
+    #region ObjectReferenceRequired
+
+    [SerializeField]
+    private GUIManager guiManager;
+    [SerializeField]
+    private InteractableNPCManager npcManager;
+    [SerializeField]
+    private new Camera camera;
+
+    #endregion
 
     #region StateAttributs
 
@@ -33,21 +43,50 @@ public class PlayerManager : MonoBehaviour {
     }
 
     #endregion
-
-    private new Camera camera;
+    #region CameraSaveAttributs
     private Vector3 localCameraPositionSave;
     private Quaternion localCameraRotationSave;
+    #endregion
+
+    #region InteractionAttributs
+    private Interactable interactable;
+    private KeyCode interactableKeyCode;
+    #endregion
 
     private void Start () {
+        this.interactable = null;
         this.attributs = GetComponent<PlayerAttributes>();
         this.rigidbody = GetComponent<Rigidbody>();
         this.graphic = GetComponentInChildren<PlayerGraphics>();
-	}
+        this.localCameraPositionSave = camera.transform.localPosition;
+        this.localCameraRotationSave = camera.transform.localRotation;
+    }
 	
 	private void Update () {
         ManageMovementUpdate();
         ManageRotationUpdate();
+        ManageInteractableEnvironnment();
+        if(interactable != null && Input.GetKeyDown(interactableKeyCode))
+        {
+            interactable.Interact();
+        }
 	}
+
+    private void CheckInteractableNear()
+    {
+        interactable = null;
+        int layerMask = ~0;
+        RaycastHit hit;
+        Vector3 addingToCenter = new Vector3(0f, transform.localScale.y / 2, 0f);
+        if (Physics.Raycast(transform.position + addingToCenter, transform.forward, out hit, attributs.InteractionDistance, layerMask))
+        {
+            interactable = hit.transform.gameObject.GetComponent<Interactable>();
+            if(interactable != null && interactable.IsInteractable())
+            {
+                interactableKeyCode = interactable.GetKeyInteract();
+            }
+        }
+    }
 
     private void ManageMovementUpdate()
     {
@@ -89,5 +128,19 @@ public class PlayerManager : MonoBehaviour {
         Vector3 rotationVector = new Vector3(0f, rotation, 0f);
         Vector3 rotationVectorSpeed = rotationVector * attributs.RotationSpeed * Time.deltaTime;
         rigidbody.MoveRotation(rigidbody.rotation * Quaternion.Euler(rotationVector));
+    }
+
+    private void ManageInteractableEnvironnment()
+    {
+        CheckInteractableNear();
+        if (interactable != null && interactable.IsInteractable())
+        {
+            guiManager.SetInteractableTextContent(interactable.GetInteractableText());
+            guiManager.ShowInteractableTextContent();
+        }
+        else
+        {
+            guiManager.HideInteractableTextContent();
+        }
     }
 }

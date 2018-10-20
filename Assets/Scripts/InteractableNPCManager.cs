@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Interactable_NPC_Manager : MonoBehaviour {
+public class InteractableNPCManager : MonoBehaviour {
 
     [SerializeField]
     private Camera mainCamera;
@@ -11,7 +11,7 @@ public class Interactable_NPC_Manager : MonoBehaviour {
     private PlayerController player;
 
     private bool IsWriting;
-    private Interactable_NPC currentSpeaker;
+    private InteractableNPC currentSpeaker;
     private NPC_Discussion_Scriptable_Object currentDiscussion;
     private int currentDiscussionContentIndex;
 
@@ -66,7 +66,7 @@ public class Interactable_NPC_Manager : MonoBehaviour {
         player.ExitInteractionWithNPC();
     }
 
-    public void SetCurrentSpeaker(Interactable_NPC speaker)
+    public void SetCurrentSpeaker(InteractableNPC speaker)
     {
         topicGUI.SetActive(false);
         discussionGUI.SetActive(false);

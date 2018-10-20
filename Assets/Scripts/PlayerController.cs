@@ -55,7 +55,8 @@ public class PlayerController : MonoBehaviour {
 
 
     [SerializeField]
-    private Interactable_NPC_Manager NPC_Manager;
+    private InteractableNPCManager NPC_Manager;
+
     [SerializeField]
     private Camera TPSCamera;
     private Vector3 localTransformSave;
@@ -63,7 +64,7 @@ public class PlayerController : MonoBehaviour {
 
     [SerializeField]
     private Text interact;
-    private Interactable_NPC PNJToInteract;
+    private InteractableNPC PNJToInteract;
 
     public Vector3 velocityGlobal;
 
@@ -155,6 +156,7 @@ public class PlayerController : MonoBehaviour {
         TPSCamera.transform.localRotation = localRotationSave;
     }
 
+    #region toDelete
     private bool IsNearPNJ()
     {
         int layerMask = LayerMask.GetMask("NPC");
@@ -164,14 +166,14 @@ public class PlayerController : MonoBehaviour {
         {
             if(hit.transform.tag == "NPC")
             {
-                PNJToInteract = hit.transform.gameObject.GetComponent<Interactable_NPC>();
+                PNJToInteract = hit.transform.gameObject.GetComponent<InteractableNPC>();
                 return true;
             }
         }
         PNJToInteract = null;
         return false;
     }
-
+    #endregion
     #region toDelete
     void PerformMovement(Vector3 velocity)
     {

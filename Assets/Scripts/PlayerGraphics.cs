@@ -40,7 +40,6 @@ public class PlayerGraphics : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log("here");
         animator.SetFloat("Horizontal", velocityHorizontalAnimation, locomotionAnimationSmoothTime, Time.deltaTime);
         animator.SetFloat("Vertical", velocityVerticalAnimation, locomotionAnimationSmoothTime, Time.deltaTime);
 	}

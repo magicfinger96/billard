@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interactable_NPC : MonoBehaviour
+public class InteractableNPC : MonoBehaviour, Interactable
 {
     /* Datas */
     [SerializeField]
@@ -15,7 +15,7 @@ public class Interactable_NPC : MonoBehaviour
 
     /* Logic REQUIREMENT */
     [SerializeField]
-    private Interactable_NPC_Manager manager;
+    private InteractableNPCManager manager;
     private Transform positionForInteraction;
     public Transform PositionForInteraction
     {
@@ -71,5 +71,18 @@ public class Interactable_NPC : MonoBehaviour
         return npc.discussionNeverMeet[rand];
     }
 
+    public KeyCode GetKeyInteract()
+    {
+        return KeyCode.F;
+    }
 
+    public string GetInteractableText()
+    {
+        return "Interagir : " + KeyCode.F.ToString();
+    }
+
+    public bool IsInteractable()
+    {
+        return true;
+    }
 }
