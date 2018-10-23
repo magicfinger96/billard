@@ -85,4 +85,9 @@ public class InteractableNPC : MonoBehaviour, Interactable
     {
         return true;
     }
+
+    public bool IsNPC()
+    {
+        return true;
+    }
 }

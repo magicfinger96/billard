@@ -4,6 +4,7 @@ using UnityEngine;
 
 public interface Interactable {
 
+    bool IsNPC();
     bool IsInteractable();
     KeyCode GetKeyInteract();
     string GetInteractableText();

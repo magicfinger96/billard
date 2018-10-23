@@ -8,7 +8,7 @@ public class InteractableNPCManager : MonoBehaviour {
     [SerializeField]
     private Camera mainCamera;
     [SerializeField]
-    private PlayerController player;
+    private PlayerManager player;
 
     private bool IsWriting;
     private InteractableNPC currentSpeaker;

@@ -4,12 +4,14 @@ using UnityEngine;
 
 [RequireComponent(typeof(PlayerAttributes))]
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(PlayerQuestManager))]
 public class PlayerManager : MonoBehaviour {
 
     #region ComponentRequired
     private new Rigidbody rigidbody;
     private PlayerAttributes attributs;
     private PlayerGraphics graphic;
+    private PlayerQuestManager quests;
     #endregion
     #region ObjectReferenceRequired
 
@@ -57,20 +59,35 @@ public class PlayerManager : MonoBehaviour {
         this.interactable = null;
         this.attributs = GetComponent<PlayerAttributes>();
         this.rigidbody = GetComponent<Rigidbody>();
+        this.quests = GetComponent<PlayerQuestManager>();
         this.graphic = GetComponentInChildren<PlayerGraphics>();
         this.localCameraPositionSave = camera.transform.localPosition;
         this.localCameraRotationSave = camera.transform.localRotation;
     }
 	
 	private void Update () {
-        ManageMovementUpdate();
-        ManageRotationUpdate();
-        ManageInteractableEnvironnment();
-        if(interactable != null && Input.GetKeyDown(interactableKeyCode))
+        if (!npcManager.DiscussionInProcess())
         {
-            interactable.Interact();
+            ManageMovementUpdate();
+            ManageRotationUpdate();
+            ManageInteractableEnvironnment();
+            if (interactable != null && Input.GetKeyDown(interactableKeyCode))
+            {
+                if(interactable.IsNPC())
+                {
+                    graphic.gameObject.SetActive(false);
+                }
+                interactable.Interact();
+            }
         }
 	}
+
+    public void ExitInteractionWithNPC()
+    {
+        graphic.gameObject.SetActive(true);
+        camera.transform.localPosition = localCameraPositionSave;
+        camera.transform.localRotation = localCameraRotationSave;
+    }
 
     private void CheckInteractableNear()
     {

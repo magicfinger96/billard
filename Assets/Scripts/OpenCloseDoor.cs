@@ -54,4 +54,9 @@ public class OpenCloseDoor : MonoBehaviour, Interactable {
     {
         return isInteractable;
     }
+   
+    public bool IsNPC()
+    {
+        return false;
+    }
 }
