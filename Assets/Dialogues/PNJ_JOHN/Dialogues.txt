@@ -1,0 +1,83 @@
+######## Phrases d'introduction jamais vu ########
+
+- Bonjour l'ami, on s'est jamais vu par ici je pense !
+C'est la première fois que tu traines par ici tu dois être perdu !
+
+* Que pouvez-vous me dire sur vous ? (Section 01)
+* Au revoir (Section Exit)
+
+######## Phrases d'introduction déjà vu ########
+
+- Hey l'ami, content de te revoir ! 
+Je peux t'aider ?
+
+- Tu es de retour parmis nous ? 
+Dis moi, je peux faire quelque chose pour toi ?
+
+* Que pouvez-vous me dire sur vous ? (Section 01)
+* Au revoir (Section Exit)
+
+######## Section 01 ########
+
+- Eh bien pas mal de choses mon jeune ami, tu sais à mon âge on a vu du pays...
+Mais comme tu peux le voir maintenant, je suis un vieillard qui passe ses journées dans un endroit piteux..
+
+- Enfin bon j'arrête de m'appitoyer sur mon sort, que veux-tu savoir ?
+
+* Vous avez de la famille ? (Section 02)
+* Vous travaillez encore ? (Section 04)
+* Non rien, au revoir ! (Section Exit)
+
+######## Section 02 ########
+
+- Bien-sûr j'ai deux merveilleux garçons et une charmante fille de 14 ans en pleine force de l'âge comme on dit...
+Je me fais des cheveux blancs tous les jours en priant pour qu'ils ne fassent pas de bêtises.
+
+- J'étais marié aussi bien-sûr... jusqu'à ce que ces saloperies de bandit ne tue ma femme.
+J'aime pas trop en parler à vrai dire.. je sais pas pourquoi je te raconte ça ..
+
+- Tu veux savoir autre chose ?
+
+* C'est courant les bandits par ici ? (Section 03)
+* Parlons d'autres choses (Section 06)
+* Non, désolé pour votre femme (Section Exit)
+
+######## Section 03 ########
+
+- Bah pas tant que ça à vrai dire ... Il y a juste les bandits de Marco qui traîne de temps en temps.
+Ils tuent toutes les personnes nuisant leurs intêrêts et le nouveau commandant de la garde ne bouge pas le p'tit pouce...
+Il est peut être de leur côté qui sait !
+
+- Tu as l'air vachement interessé par l'histoire du village, pourquoi tu n'irais pas voir Freddy ? Il en connait un rayon sur l'endroit.
+
+* D'accord, je vais aller le voir (accepter / Section Exit) 
+* Non merci, je n'ai pas le temps (refuser / Section Exit)
+
+######## Section 04 ########
+
+- Non plus maintenant .. J'étais garde dans le village avant, mais pas sous les ordres de ce tordu de Paros.. 
+34 ans que j'ai servi le village et aucune reconnaissance si ce n'est me faire virer comme un malpropre quand j'ai exprimé mon mécontentement lors de la mort de ma femme.
+
+- Du coup maintenant je travaille sur moi même c'est pas mal non ?! ahahah
+
+* Vous pensez que Paros est dangereux ? (Section 05)
+* Parlons d'autres choses (Section 06)
+* Au revoir l'ami (Section Exit)
+
+######## Section 05 ########
+- Je ne dirais pas qu'il est dangereuse car les affaires se font dans l'ombre et que les bandits viennent très rarement ici, donc il n'a pas à se montrer dangereux.
+De toutes manières, tant que tu mets pas ton nez où il ne faut pas, tout ira bien !
+
+* Parlons de choses plus réjouissantes (Section 06)
+* J'en prend note, aurevoir (Section Exit)
+
+######## Section 06 ########
+
+- Oui, de quoi veux-tu parler ?
+
+* Vous avez de la famille ? (Section 02)
+* Vous travaillez encore ? (Section 04)
+* Non rien, au revoir ! (Section Exit)
+
+######## Section Exit ########
+...

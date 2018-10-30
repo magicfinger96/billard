@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d4102b4c209fad4c8cf9ec4fb147e10, type: 3}
+  m_Name: John_AboutYou_Family_Bandits_QuestUnseen
+  m_EditorClassIdentifier: 
+  title: C'est courant les bandits par ici ?
+  isQuestAttached: 0
+  content:
+  - "Bah pas tant que \xE7a \xE0 vrai dire ... Il y a juste les bandits de Marco qui
+    tra\xEEne de temps en temps.\r\nIls tuent toutes les personnes nuisant leurs int\xEAr\xEAts
+    et le nouveau commandant de la garde ne bouge pas le p'tit pouce...\r\nIl est
+    peut \xEAtre de leur c\xF4t\xE9 qui sait !"
+  - "Tu as l'air vachement interess\xE9 par l'histoire du village, pourquoi tu n'irais
+    pas voir Freddy ? Il en connait un rayon sur l'endroit."
+  relatedDiscussions:
+  - {fileID: 11400000, guid: ddd32a34284c02a4b8ac9c565466b576, type: 2}
+  - {fileID: 11400000, guid: 3e7562658d1af0646816c974995aad3f, type: 2}

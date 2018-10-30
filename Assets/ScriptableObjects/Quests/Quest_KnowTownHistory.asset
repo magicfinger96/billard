@@ -9,15 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e03f9640e887cd45a2832ac87f4557d, type: 3}
-  m_Name: Quest_SpeakToPeoples
+  m_Name: Quest_KnowTownHistory
   m_EditorClassIdentifier: 
   questId: 1
-  name: Faire connaissance...
-  description: "Vous venez d'arriver dans l'auberge et ne connaissez personne ...
-    Faites connaissance avec quelques personnes pr\xE9sentes pour en savoir un peu
-    plus sur eux..."
+  name: L'histoire du village...
+  description: "John vous a propos\xE9 d'aller parler \xE0 ... pour en savoir plus
+    sur l'histoire du village et des bandits alentours. Vous le trouverez probablement
+    pr\xE8s du bar."
   objectifs:
-  - Faite connaissance avec X
-  - Faite connaissance avec Y
-  - Faite connaissance avec Z
+  - "Parler \xE0 ... (0/1)"
   xpEarn: 150

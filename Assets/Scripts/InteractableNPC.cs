@@ -25,7 +25,8 @@ public class InteractableNPC : MonoBehaviour, Interactable
 
     private void Start()
     {
-        npc.hasAlreadyMeetPlayer = false;
+        this.npc.hasAlreadyProposeQuest = false;
+        this.npc.hasAlreadyMeetPlayer = false;
         GetCameraPositionFromComponent();
     }
 

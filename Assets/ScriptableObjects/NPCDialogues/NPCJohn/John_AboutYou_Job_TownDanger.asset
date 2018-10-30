@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d4102b4c209fad4c8cf9ec4fb147e10, type: 3}
+  m_Name: John_AboutYou_Job_TownDanger
+  m_EditorClassIdentifier: 
+  title: Vous pensez que Paros est dangereux ?
+  content:
+  - "Je ne dirais pas qu'il est dangereuse car les affaires se font dans l'ombre et
+    que les bandits viennent tr\xE8s rarement ici, donc il n'a pas \xE0 se montrer
+    dangereux.\r\nDe toutes mani\xE8res, tant que tu mets pas ton nez o\xF9 il ne
+    faut pas, tout ira bien !"
+  relatedDiscussions:
+  - {fileID: 11400000, guid: b42abe6b788585142bdebf2b21409543, type: 2}
+  - {fileID: 11400000, guid: a22a5da1c025a524eaac7047d2f689cf, type: 2}

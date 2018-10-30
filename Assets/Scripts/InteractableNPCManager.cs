@@ -85,6 +85,22 @@ public class InteractableNPCManager : MonoBehaviour {
     {
         NPC_Discussion_Scriptable_Object nextDiscussion = currentDiscussion.relatedDiscussions[topicIndex];
         currentDiscussion = nextDiscussion;
+
+        if(currentDiscussion.isQuestAttached)
+        {
+            if(currentSpeaker.Npc.hasAlreadyProposeQuest)
+            {
+                NPC_Discussion_Quest_Scriptable_Object asQuest = (NPC_Discussion_Quest_Scriptable_Object)currentDiscussion;
+                currentDiscussion = asQuest.questSeen;
+            }
+            else
+            {
+                NPC_Discussion_Quest_Scriptable_Object asQuest = (NPC_Discussion_Quest_Scriptable_Object)currentDiscussion;
+                currentDiscussion = asQuest.questUnseen;
+                currentSpeaker.Npc.hasAlreadyProposeQuest = true;
+            }
+        }
+
         currentDiscussionContentIndex = 0;
         topicGUI.SetActive(false);
         discussionGUI.SetActive(false);

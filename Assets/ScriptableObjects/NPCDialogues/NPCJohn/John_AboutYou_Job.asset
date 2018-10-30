@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d4102b4c209fad4c8cf9ec4fb147e10, type: 3}
+  m_Name: John_AboutYou_Job
+  m_EditorClassIdentifier: 
+  title: Vous travaillez encore ?
+  isQuestAttached: 0
+  content:
+  - "Non plus maintenant .. J'\xE9tais garde dans le village avant, mais pas sous
+    les ordres de ce tordu de Paros.. \r\n34 ans que j'ai servi le village et aucune
+    reconnaissance si ce n'est me faire virer comme un malpropre quand j'ai exprim\xE9
+    mon m\xE9contentement lors de la mort de ma femme."
+  - "Du coup maintenant je travaille sur moi m\xEAme c'est pas mal non ?! ahahah"
+  relatedDiscussions:
+  - {fileID: 11400000, guid: f01f46ab108a70446bab8662296c4e4a, type: 2}
+  - {fileID: 11400000, guid: 569e3e0cb0350434095030fe6965d36f, type: 2}
+  - {fileID: 11400000, guid: 8ef8a7f83de4aef4586babc30aa935cd, type: 2}

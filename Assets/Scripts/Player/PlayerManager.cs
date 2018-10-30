@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(PlayerAttributes))]
 [RequireComponent(typeof(Rigidbody))]
@@ -21,6 +22,8 @@ public class PlayerManager : MonoBehaviour {
     private InteractableNPCManager npcManager;
     [SerializeField]
     private new Camera camera;
+    [SerializeField]
+    private GameObject menuPanel;
 
     #endregion
 
@@ -33,6 +36,12 @@ public class PlayerManager : MonoBehaviour {
     {
         get { return isInteracting; }
         set { isInteracting = value; }
+    }
+    private bool isInMenu;
+    public bool IsInMenu
+    {
+        get { return isInMenu; }
+        set { isInMenu = value; }
     }
 
     // Attribut that give the information if the player
@@ -56,6 +65,8 @@ public class PlayerManager : MonoBehaviour {
     #endregion
 
     private void Start () {
+        this.isMoving = false;
+        this.isInMenu = false;
         this.interactable = null;
         this.attributs = GetComponent<PlayerAttributes>();
         this.rigidbody = GetComponent<Rigidbody>();
@@ -68,16 +79,20 @@ public class PlayerManager : MonoBehaviour {
 	private void Update () {
         if (!npcManager.DiscussionInProcess())
         {
-            ManageMovementUpdate();
-            ManageRotationUpdate();
-            ManageInteractableEnvironnment();
-            if (interactable != null && Input.GetKeyDown(interactableKeyCode))
+            ManageMenuInteraction();
+            if(!IsInMenu)
             {
-                if(interactable.IsNPC())
+                ManageMovementUpdate();
+                ManageRotationUpdate();
+                ManageInteractableEnvironnment();
+                if (interactable != null && Input.GetKeyDown(interactableKeyCode))
                 {
-                    graphic.gameObject.SetActive(false);
+                    if (interactable.IsNPC())
+                    {
+                        graphic.gameObject.SetActive(false);
+                    }
+                    interactable.Interact();
                 }
-                interactable.Interact();
             }
         }
 	}
@@ -102,6 +117,15 @@ public class PlayerManager : MonoBehaviour {
             {
                 interactableKeyCode = interactable.GetKeyInteract();
             }
+        }
+    }
+
+    private void ManageMenuInteraction()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            isInMenu = !isInMenu;
+            menuPanel.SetActive(isInMenu);
         }
     }
 
