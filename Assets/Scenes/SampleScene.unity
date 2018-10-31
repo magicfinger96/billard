@@ -1187,6 +1187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npc: {fileID: 11400000, guid: ac1917c86b7a507438d08e418cb4cd5b, type: 2}
+  quest: {fileID: 11400000, guid: ed3274d5dd535a0489f940df3c61575b, type: 2}
   manager: {fileID: 1260323828}
 --- !u!136 &200799818
 CapsuleCollider:

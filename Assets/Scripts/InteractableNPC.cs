@@ -13,6 +13,14 @@ public class InteractableNPC : MonoBehaviour, Interactable
         private set { }
     }
 
+    [SerializeField]
+    private NPC_Quest_Scriptable_Object quest;
+    public NPC_Quest_Scriptable_Object Quest
+    {
+        get { return quest; }
+        private set { }
+    }
+
     /* Logic REQUIREMENT */
     [SerializeField]
     private InteractableNPCManager manager;

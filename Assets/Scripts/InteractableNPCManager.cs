@@ -86,7 +86,7 @@ public class InteractableNPCManager : MonoBehaviour {
         NPC_Discussion_Scriptable_Object nextDiscussion = currentDiscussion.relatedDiscussions[topicIndex];
         currentDiscussion = nextDiscussion;
 
-        if(currentDiscussion.isQuestAttached)
+        if(currentDiscussion.isQuestAttached && currentDiscussion.relatedDiscussions.Count > 0)
         {
             if(currentSpeaker.Npc.hasAlreadyProposeQuest)
             {
@@ -107,6 +107,11 @@ public class InteractableNPCManager : MonoBehaviour {
 
         if(currentDiscussion.content.Count == 0 && currentDiscussion.relatedDiscussions.Count == 0)
         {
+            if(currentDiscussion.isQuestAttached)
+            {
+                NPC_Quest_Scriptable_Object quest = currentSpeaker.Quest;
+                Debug.Log("Description : " + quest.description);
+            }
             EndOfDiscussion();
         }
         else
