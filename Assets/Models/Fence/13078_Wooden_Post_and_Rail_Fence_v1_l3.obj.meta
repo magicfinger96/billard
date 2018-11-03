@@ -1,0 +1,189 @@
+fileFormatVersion: 2
+guid: 2c8690efefd16be40b2aa5669ff58c11
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Wooden_Post_and_Rail_Fence_1
+    100004: Wooden_Post_and_Rail_Fence_2
+    100006: Wooden_Post_and_Rail_Fence_3
+    100008: Wooden_Post_and_Rail_Fence_4
+    100010: Wooden_Post_and_Rail_Fence_5
+    100012: Wooden_Post_and_Rail_Fence_6
+    100014: Wooden_Post_and_Rail_Fence_7
+    100016: Wooden_Post_and_Rail_Fence_8
+    100018: Wooden_Post_and_Rail_Fence_9
+    400000: //RootNode
+    400002: Wooden_Post_and_Rail_Fence_1
+    400004: Wooden_Post_and_Rail_Fence_2
+    400006: Wooden_Post_and_Rail_Fence_3
+    400008: Wooden_Post_and_Rail_Fence_4
+    400010: Wooden_Post_and_Rail_Fence_5
+    400012: Wooden_Post_and_Rail_Fence_6
+    400014: Wooden_Post_and_Rail_Fence_7
+    400016: Wooden_Post_and_Rail_Fence_8
+    400018: Wooden_Post_and_Rail_Fence_9
+    2100000: Wooden_Post_and_Rail_Fence_1Mat
+    2100002: Wooden_Post_and_Rail_Fence_2Mat
+    2100004: Wooden_Post_and_Rail_Fence_3Mat
+    2100006: Wooden_Post_and_Rail_Fence_4Mat
+    2100008: Wooden_Post_and_Rail_Fence_5Mat
+    2100010: Wooden_Post_and_Rail_Fence_6Mat
+    2100012: Wooden_Post_and_Rail_Fence_7Mat
+    2100014: Wooden_Post_and_Rail_Fence_8Mat
+    2100016: Wooden_Post_and_Rail_Fence_9Mat
+    2300000: Wooden_Post_and_Rail_Fence_1
+    2300002: Wooden_Post_and_Rail_Fence_2
+    2300004: Wooden_Post_and_Rail_Fence_3
+    2300006: Wooden_Post_and_Rail_Fence_4
+    2300008: Wooden_Post_and_Rail_Fence_5
+    2300010: Wooden_Post_and_Rail_Fence_6
+    2300012: Wooden_Post_and_Rail_Fence_7
+    2300014: Wooden_Post_and_Rail_Fence_8
+    2300016: Wooden_Post_and_Rail_Fence_9
+    3300000: Wooden_Post_and_Rail_Fence_1
+    3300002: Wooden_Post_and_Rail_Fence_2
+    3300004: Wooden_Post_and_Rail_Fence_3
+    3300006: Wooden_Post_and_Rail_Fence_4
+    3300008: Wooden_Post_and_Rail_Fence_5
+    3300010: Wooden_Post_and_Rail_Fence_6
+    3300012: Wooden_Post_and_Rail_Fence_7
+    3300014: Wooden_Post_and_Rail_Fence_8
+    3300016: Wooden_Post_and_Rail_Fence_9
+    4300000: Wooden_Post_and_Rail_Fence_1
+    4300002: Wooden_Post_and_Rail_Fence_2
+    4300004: Wooden_Post_and_Rail_Fence_3
+    4300006: Wooden_Post_and_Rail_Fence_4
+    4300008: Wooden_Post_and_Rail_Fence_5
+    4300010: Wooden_Post_and_Rail_Fence_6
+    4300012: Wooden_Post_and_Rail_Fence_7
+    4300014: Wooden_Post_and_Rail_Fence_8
+    4300016: Wooden_Post_and_Rail_Fence_9
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wooden_Post_and_Rail_Fence_1Mat
+    second: {fileID: 2100000, guid: f34c896fd464f7a4c8dd4db017fefe24, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wooden_Post_and_Rail_Fence_2Mat
+    second: {fileID: 2100000, guid: c14f1e0cc8438554c8de535348a6ebe6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wooden_Post_and_Rail_Fence_3Mat
+    second: {fileID: 2100000, guid: ae9b738a012092d4bbbaec741f8bc271, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wooden_Post_and_Rail_Fence_4Mat
+    second: {fileID: 2100000, guid: e3f4f366d1b1be1479d0d39732b72a8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wooden_Post_and_Rail_Fence_5Mat
+    second: {fileID: 2100000, guid: 7aeec476c70b8a843bf01b8c52e2e343, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wooden_Post_and_Rail_Fence_6Mat
+    second: {fileID: 2100000, guid: c875008f8aed7b344a9825641d510103, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wooden_Post_and_Rail_Fence_7Mat
+    second: {fileID: 2100000, guid: 7665ad9bedc3d894aa2e6eb4c37e926e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wooden_Post_and_Rail_Fence_8Mat
+    second: {fileID: 2100000, guid: e6250cd0e79351749b045c7f99bc4674, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wooden_Post_and_Rail_Fence_9Mat
+    second: {fileID: 2100000, guid: 8a1dd0493619cf5478792c1536ab3243, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

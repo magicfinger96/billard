@@ -17,7 +17,6 @@ public class HeaderButtonManager : MonoBehaviour {
     {
         foreach(Button b in buttons)
         {
-            Debug.Log("here");
             b.GetComponent<MenuButtonHeader>().AsUnselected();
             b.GetComponent<MenuButtonHeader>().isClicked = false;
         }

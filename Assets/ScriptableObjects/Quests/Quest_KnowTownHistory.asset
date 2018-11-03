@@ -11,11 +11,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e03f9640e887cd45a2832ac87f4557d, type: 3}
   m_Name: Quest_KnowTownHistory
   m_EditorClassIdentifier: 
+  questNameGiver: John
   questId: 1
   name: L'histoire du village...
+  brief: "Premi\xE8re rencontre"
+  needValidation: 0
   description: "John vous a propos\xE9 d'aller parler \xE0 ... pour en savoir plus
     sur l'histoire du village et des bandits alentours. Vous le trouverez probablement
     pr\xE8s du bar."
-  objectifs:
-  - "Parler \xE0 ... (0/1)"
-  xpEarn: 150
+  objectives:
+  - {fileID: 11400000, guid: c8102270ef9ddf44eb3e185243a13063, type: 2}
+  rewards:
+  - {fileID: 11400000, guid: 5e176350d3ba9ed42af41de3762ffff2, type: 2}

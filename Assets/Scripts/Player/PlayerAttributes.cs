@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerAttributes : MonoBehaviour {
 
@@ -37,6 +38,11 @@ public class PlayerAttributes : MonoBehaviour {
         set { EarnExperience(value); }
     }
 
+    [SerializeField]
+    private Text levelText;
+    [SerializeField]
+    private ProgressXPBar barProgress;
+
     #endregion
     #region LevelAndExperienceMethods
 
@@ -51,7 +57,11 @@ public class PlayerAttributes : MonoBehaviour {
             xp -= amountToLevelUp;
             amountToLevelUp *= 2;
             level++;
+
+            levelText.text = level.ToString();
         }
+        barProgress.UpdateBar(amountToLevelUp, xp);
+
     }
     #endregion
 
@@ -125,8 +135,6 @@ public class PlayerAttributes : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
-
 
 }

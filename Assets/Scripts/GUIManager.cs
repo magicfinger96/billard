@@ -26,6 +26,22 @@ public class GUIManager : MonoBehaviour {
     }
     #endregion
 
+    #region HUDPlayerAttributs
+    [SerializeField]
+    private GameObject hudPlayer;
+    #endregion
+    #region HUDPlayerMethods
+    public void ShowHUDPlayer()
+    {
+        hudPlayer.SetActive(true);
+    }
+
+    public void HideHUDPlayer()
+    {
+        hudPlayer.SetActive(false);
+    }
+    #endregion
+
     // Use this for initialization
     void Start () {
 		

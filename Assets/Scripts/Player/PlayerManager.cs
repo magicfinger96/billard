@@ -10,9 +10,28 @@ public class PlayerManager : MonoBehaviour {
 
     #region ComponentRequired
     private new Rigidbody rigidbody;
+
     private PlayerAttributes attributs;
+    public PlayerAttributes Attributs
+    {
+        get { return attributs; }
+        private set { }
+    }
+
     private PlayerGraphics graphic;
+    public PlayerGraphics Graphic
+    {
+        get { return graphic; }
+        private set { }
+    }
+
     private PlayerQuestManager quests;
+    public PlayerQuestManager Quests
+    {
+        get { return quests; }
+        private set { }
+    }
+
     #endregion
     #region ObjectReferenceRequired
 
@@ -89,6 +108,8 @@ public class PlayerManager : MonoBehaviour {
                 {
                     if (interactable.IsNPC())
                     {
+                        guiManager.HideInteractableTextContent();
+                        guiManager.HideHUDPlayer();
                         graphic.gameObject.SetActive(false);
                     }
                     interactable.Interact();
@@ -100,8 +121,14 @@ public class PlayerManager : MonoBehaviour {
     public void ExitInteractionWithNPC()
     {
         graphic.gameObject.SetActive(true);
+        guiManager.ShowHUDPlayer();
         camera.transform.localPosition = localCameraPositionSave;
         camera.transform.localRotation = localCameraRotationSave;
+    }
+
+    public void AcceptQuest(NPC_Quest_Scriptable_Object quest)
+    {
+        quests.AddNewQuest(quest);
     }
 
     private void CheckInteractableNear()
@@ -126,6 +153,10 @@ public class PlayerManager : MonoBehaviour {
         {
             isInMenu = !isInMenu;
             menuPanel.SetActive(isInMenu);
+            if(!isInMenu)
+            {
+                quests.CloseDetailedQuest();
+            }
         }
     }
 

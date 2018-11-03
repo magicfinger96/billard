@@ -8,6 +8,7 @@ TagManager:
   - CameraPositionning
   - NPC
   - PlayerGFX
+  - PlayerMain
   layers:
   - Default
   - TransparentFX

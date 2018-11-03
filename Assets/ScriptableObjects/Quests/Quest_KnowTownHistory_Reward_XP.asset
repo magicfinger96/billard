@@ -8,11 +8,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d4102b4c209fad4c8cf9ec4fb147e10, type: 3}
-  m_Name: John_AboutYou_Family_Bandits_QuestAccept
+  m_Script: {fileID: 11500000, guid: d50ceac941d70b14687ee1db844d9129, type: 3}
+  m_Name: Quest_KnowTownHistory_Reward_XP
   m_EditorClassIdentifier: 
-  title: "Tr\xE8s bien j'accepte !"
-  isQuestAttached: 1
-  isFinalQuestDiscussion: 1
-  content: []
-  relatedDiscussions: []
+  quantity: 150
+  name: XP
