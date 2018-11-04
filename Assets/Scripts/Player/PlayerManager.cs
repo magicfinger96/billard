@@ -79,6 +79,8 @@ public class PlayerManager : MonoBehaviour {
     #endregion
 
     #region InteractionAttributs
+    [SerializeField]
+    private LayerMask layerToInteractable;
     private Interactable interactable;
     private KeyCode interactableKeyCode;
     #endregion
@@ -134,12 +136,13 @@ public class PlayerManager : MonoBehaviour {
     private void CheckInteractableNear()
     {
         interactable = null;
-        int layerMask = ~0;
         RaycastHit hit;
         Vector3 addingToCenter = new Vector3(0f, transform.localScale.y / 2, 0f);
-        if (Physics.Raycast(transform.position + addingToCenter, transform.forward, out hit, attributs.InteractionDistance, layerMask))
+        if (Physics.Raycast(transform.position + addingToCenter, transform.forward, out hit, attributs.InteractionDistance, layerToInteractable))
         {
-            interactable = hit.transform.gameObject.GetComponent<Interactable>();
+            Debug.Log(hit.transform.name);
+            interactable = hit.transform.gameObject.GetComponentInChildren<Interactable>();
+            Debug.Log(interactable);
             if(interactable != null && interactable.IsInteractable())
             {
                 interactableKeyCode = interactable.GetKeyInteract();
@@ -207,6 +210,7 @@ public class PlayerManager : MonoBehaviour {
         CheckInteractableNear();
         if (interactable != null && interactable.IsInteractable())
         {
+            Debug.Log("heree");
             guiManager.SetInteractableTextContent(interactable.GetInteractableText());
             guiManager.ShowInteractableTextContent();
         }

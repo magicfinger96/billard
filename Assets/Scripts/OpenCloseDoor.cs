@@ -23,7 +23,10 @@ public class OpenCloseDoor : MonoBehaviour, Interactable {
     public void Interact()
     {
         isOpeningClosing = true;
-        StartCoroutine(DoorAnimation());
+        if (isInteractable)
+        {
+            StartCoroutine(DoorAnimation());
+        }
     }
 
     IEnumerator DoorAnimation()
@@ -32,12 +35,15 @@ public class OpenCloseDoor : MonoBehaviour, Interactable {
         anim.SetBool("ShouldOpen", true);
         yield return new WaitForSeconds(1.5f);
 
-        yield return new WaitForSeconds(2);
-
-        anim.SetBool("ShouldOpen", false);
+        yield return new WaitForSeconds(3);
+        anim.SetBool("ShouldClose", true);
+        
         yield return new WaitForSeconds(1.5f);
         isOpeningClosing = false;
         isInteractable = true;
+
+        anim.SetBool("ShouldClose", false);
+        anim.SetBool("ShouldOpen", false);
     }
 
     public KeyCode GetKeyInteract()
