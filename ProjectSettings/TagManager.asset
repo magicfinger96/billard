@@ -9,6 +9,7 @@ TagManager:
   - NPC
   - PlayerGFX
   - PlayerMain
+  - GUIQuestItem
   layers:
   - Default
   - TransparentFX

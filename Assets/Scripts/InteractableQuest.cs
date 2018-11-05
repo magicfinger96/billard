@@ -11,6 +11,8 @@ public class InteractableQuest : MonoBehaviour, Interactable {
     private NPC_Quest_Objective_Scriptable_Object objectiveAttached;
     [SerializeField]
     private PlayerQuestManager playerQuestManager;
+    [SerializeField]
+    private bool shouldDissapearOnInteract = false;
 
 
     public string GetInteractableText()
@@ -28,12 +30,16 @@ public class InteractableQuest : MonoBehaviour, Interactable {
         if(IsInteractable())
         {
             playerQuestManager.ValidateObjectiveOnQuest(questAttached.name, objectiveAttached.description);
+            if (shouldDissapearOnInteract)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 
     public bool IsInteractable()
     {
-       return playerQuestManager.GetQuestByName(questAttached.name) != null;
+        return playerQuestManager.GetQuestByName(questAttached.name) != null;
     }
 
     public bool IsNPC()

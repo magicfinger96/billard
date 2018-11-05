@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d4102b4c209fad4c8cf9ec4fb147e10, type: 3}
+  m_Name: Robert_AboutYou_Billard_QuestUnseen
+  m_EditorClassIdentifier: 
+  title: Le billard ? C'est quoi ?
+  isQuestAttached: 0
+  isFinalQuestDiscussion: 0
+  content:
+  - "Alors \xE7a l'ami, il me faudrait des livres et des livres pour pouvoir t'expliquer
+    l'art du billard. "
+  - Pour faire simple, il suffit de jouer avec une canne en tapant dans la boule blanche
+    pour faire rentrer les autres boules dans les trous.
+  - "Les r\xE8gles sont simples comme bonjour, mais la maitr\xEEse te prend des ann\xE9es
+    !"
+  - "Tu as l'air int\xE9ress\xE9, tu sais quoi, trouves la canne \xE0 l'\xE9tage,
+    et va t'entrainer, tu verras c'est super divertissant !"
+  relatedDiscussions:
+  - {fileID: 11400000, guid: a7e8b5a3d1895454192320d6d68c7c9a, type: 2}
+  - {fileID: 11400000, guid: 1f17c60df4f1a934ba1329c2a1daa3cc, type: 2}

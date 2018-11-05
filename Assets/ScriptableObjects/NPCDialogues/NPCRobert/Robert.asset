@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcb998a6918114b42bd25cb098a7e12e, type: 3}
+  m_Name: Robert
+  m_EditorClassIdentifier: 
+  name: Robert
+  hasAlreadyMeetPlayer: 0
+  hasAlreadyProposeQuest: 0
+  discussionNeverMeet:
+  - {fileID: 11400000, guid: 7e3b9efbe7941eb498c5fd56c3369b33, type: 2}
+  discussionsAlreadyMeet:
+  - {fileID: 11400000, guid: 2ec05a91612e958479326efc2a709550, type: 2}

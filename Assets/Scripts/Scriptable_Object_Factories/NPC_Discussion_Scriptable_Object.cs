@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NPC_Speaker", menuName = "NPC_Speaker/Discussion")]
+[CreateAssetMenu(fileName = "NPC_Speaker", menuName = "NPC_Speaker/Discussion/NoQuest")]
 public class NPC_Discussion_Scriptable_Object : ScriptableObject
 {
     public string title;

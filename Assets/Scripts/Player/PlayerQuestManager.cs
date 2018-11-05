@@ -77,7 +77,6 @@ public class PlayerQuestManager : MonoBehaviour {
 
                 if(allComplete && !quest.needValidation)
                 {
-                    Debug.Log(currentQuests.Remove(quest));
                     RemoveQuestFromQuestList(quest.name);
                     questSucceedText.text = "Félicitation\nVous venez de terminer la quête\n\"" + quest.name+"\"";
                     questSucceedText.gameObject.SetActive(true);
@@ -101,13 +100,17 @@ public class PlayerQuestManager : MonoBehaviour {
 
     private void RemoveQuestFromQuestList(string questName)
     {
-        Component[] components = questListGUI.GetComponents<Transform>();
+        Component[] components = questListGUI.GetComponentsInChildren<RectTransform>(true);
         foreach (Component comp in components)
         {
-            Text[] text = comp.GetComponentsInChildren<Text>();
-            if(text[0].text == questName)
+            if(comp.tag == "GUIQuestItem")
             {
-                Destroy(comp.gameObject);
+                Text[] text = comp.GetComponentsInChildren<Text>();
+                if (text[0].text == questName)
+                {
+                    Debug.Log(comp.name);
+                    Destroy(comp.gameObject);
+                }
             }
         }
     }
@@ -150,6 +153,7 @@ public class PlayerQuestManager : MonoBehaviour {
                 rewardsDetailedQuest.text = reward.quantity + " " + reward.name;
             }
         }
+
         questInDetailPanel.SetActive(true);
     }
 

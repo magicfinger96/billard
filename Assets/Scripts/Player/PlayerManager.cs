@@ -140,9 +140,7 @@ public class PlayerManager : MonoBehaviour {
         Vector3 addingToCenter = new Vector3(0f, transform.localScale.y / 2, 0f);
         if (Physics.Raycast(transform.position + addingToCenter, transform.forward, out hit, attributs.InteractionDistance, layerToInteractable))
         {
-            Debug.Log(hit.transform.name);
             interactable = hit.transform.gameObject.GetComponentInChildren<Interactable>();
-            Debug.Log(interactable);
             if(interactable != null && interactable.IsInteractable())
             {
                 interactableKeyCode = interactable.GetKeyInteract();
@@ -158,7 +156,12 @@ public class PlayerManager : MonoBehaviour {
             menuPanel.SetActive(isInMenu);
             if(!isInMenu)
             {
+                guiManager.ShowHUDPlayer();
                 quests.CloseDetailedQuest();
+            }
+            else
+            {
+                guiManager.HideHUDPlayer();
             }
         }
     }
@@ -210,7 +213,6 @@ public class PlayerManager : MonoBehaviour {
         CheckInteractableNear();
         if (interactable != null && interactable.IsInteractable())
         {
-            Debug.Log("heree");
             guiManager.SetInteractableTextContent(interactable.GetInteractableText());
             guiManager.ShowInteractableTextContent();
         }
