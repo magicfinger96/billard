@@ -150,7 +150,7 @@ public class PlayerManager : MonoBehaviour {
 
     private void ManageMenuInteraction()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             isInMenu = !isInMenu;
             menuPanel.SetActive(isInMenu);
