@@ -72,6 +72,13 @@ public class PlayerManager : MonoBehaviour {
         set { isMoving = value; }
     }
 
+    private bool hasHoop;
+    public bool HasHoop
+    {
+        get { return hasHoop; }
+        set { hasHoop = value; }
+    }
+
     #endregion
     #region CameraSaveAttributs
     private Vector3 localCameraPositionSave;
