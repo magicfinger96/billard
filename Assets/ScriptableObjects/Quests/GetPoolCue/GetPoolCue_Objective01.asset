@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7658a196f1f3cbb489938c3b31eea82c, type: 3}
   m_Name: GetPoolCue_Objective01
   m_EditorClassIdentifier: 
-  isComplete: 0
-  description: "R\xE9cup\xE9rer la canne"
+  isComplete: 1
+  description: "R\xE9cup\xE9rer l'arceau"

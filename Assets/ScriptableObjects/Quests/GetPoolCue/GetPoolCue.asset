@@ -13,11 +13,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questNameGiver: Robert
   questId: 2
-  name: "R\xE9cup\xE9rer la canne"
+  name: "R\xE9cup\xE9rer l'arceau"
   brief: "Commencer \xE0 jouer..."
   needValidation: 0
   description: "Robert vous a expliqu\xE9 que la premi\xE8re \xE9tape pour pouvoir
-    jouer \xE0 l'\xE9trange jeu est de r\xE9cup\xE9rer la canne qui se trouve \xE0
+    jouer \xE0 l'\xE9trange jeu est de r\xE9cup\xE9rer l'arceau qui se trouve \xE0
     l'\xE9tage !"
   objectives:
   - {fileID: 11400000, guid: 44f8a7ecc0ce09740ac004281ea16cd6, type: 2}
