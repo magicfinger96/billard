@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InteractableBillard : MonoBehaviour, Interactable {
+    public Pool.Main poolMain;
 
     public string GetInteractableText()
     {
@@ -16,7 +17,7 @@ public class InteractableBillard : MonoBehaviour, Interactable {
 
     public void Interact()
     {
-        Debug.Log("va jouer");
+        poolMain.loadGame();
     }
 
     public bool IsInteractable()

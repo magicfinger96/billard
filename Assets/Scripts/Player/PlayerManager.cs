@@ -105,23 +105,25 @@ public class PlayerManager : MonoBehaviour {
     }
 	
 	private void Update () {
-        if (!npcManager.DiscussionInProcess())
-        {
-            ManageMenuInteraction();
-            if(!IsInMenu)
+        if (this.gameObject.activeSelf) {
+            if (!npcManager.DiscussionInProcess())
             {
-                ManageMovementUpdate();
-                ManageRotationUpdate();
-                ManageInteractableEnvironnment();
-                if (interactable != null && Input.GetKeyDown(interactableKeyCode))
+                ManageMenuInteraction();
+                if (!IsInMenu)
                 {
-                    if (interactable.IsNPC())
+                    ManageMovementUpdate();
+                    ManageRotationUpdate();
+                    ManageInteractableEnvironnment();
+                    if (interactable != null && Input.GetKeyDown(interactableKeyCode))
                     {
-                        guiManager.HideInteractableTextContent();
-                        guiManager.HideHUDPlayer();
-                        graphic.gameObject.SetActive(false);
+                        if (interactable.IsNPC())
+                        {
+                            guiManager.HideInteractableTextContent();
+                            guiManager.HideHUDPlayer();
+                            graphic.gameObject.SetActive(false);
+                        }
+                        interactable.Interact();
                     }
-                    interactable.Interact();
                 }
             }
         }
