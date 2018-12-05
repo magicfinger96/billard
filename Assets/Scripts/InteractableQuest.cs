@@ -13,6 +13,8 @@ public class InteractableQuest : MonoBehaviour, Interactable {
     private PlayerQuestManager playerQuestManager;
     [SerializeField]
     private bool shouldDissapearOnInteract = false;
+    [SerializeField]
+    private bool hoopAttached = false;
 
 
     public string GetInteractableText()
@@ -33,6 +35,10 @@ public class InteractableQuest : MonoBehaviour, Interactable {
             if (shouldDissapearOnInteract)
             {
                 Destroy(this.gameObject);
+            }
+            if (hoopAttached)
+            {
+                playerQuestManager.hoopGot();
             }
         }
     }

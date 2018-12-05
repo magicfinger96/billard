@@ -97,6 +97,7 @@ public class PlayerManager : MonoBehaviour {
     #endregion
 
     private void Start () {
+        this.hasHoop = false;
         this.sinceLast = 0.0f;
         this.source = GetComponent<AudioSource>();
         this.isMoving = false;

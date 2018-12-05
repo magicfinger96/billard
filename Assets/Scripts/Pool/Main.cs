@@ -72,6 +72,7 @@ namespace Pool
         {
             holeFillers[9].SetActive(false);
             hoop.transform.localPosition = posHoop[9];
+            hoop.SetActive(true);
 
         }
 

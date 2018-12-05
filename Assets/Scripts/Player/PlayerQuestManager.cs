@@ -27,6 +27,8 @@ public class PlayerQuestManager : MonoBehaviour {
     private Text objectivesDetailedQuest;
     [SerializeField]
     private Text rewardsDetailedQuest;
+    [SerializeField]
+    private GameObject pool;
 
     private List<NPC_Quest_Scriptable_Object> currentQuests;
     private int currentQuestSelected;
@@ -42,6 +44,11 @@ public class PlayerQuestManager : MonoBehaviour {
 	void Update () {
 
 	}
+
+    public void hoopGot()
+    {
+        this.player.HasHoop = true;
+    }
 
     public void AddNewQuest(NPC_Quest_Scriptable_Object quest)
     {
@@ -86,6 +93,11 @@ public class PlayerQuestManager : MonoBehaviour {
                     foreach(NPC_Quest_Reward_Scriptable_Object reward in quest.rewards)
                     {
                         reward.Claim(player);
+                    }
+
+                    if (quest.name == "Récupérer l'arceau")
+                    {
+                        pool.GetComponent<Pool.Main>().hoopFound();
                     }
                 }
             }

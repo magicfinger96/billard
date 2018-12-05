@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InteractableBillard : MonoBehaviour, Interactable {
+
+    public PlayerManager player;
     public Pool.Main poolMain;
 
     public string GetInteractableText()
     {
-        return "Interagir : " + GetKeyInteract().ToString();
+        return "Jouer : " + GetKeyInteract().ToString();
     }
 
     public KeyCode GetKeyInteract()
@@ -17,12 +19,16 @@ public class InteractableBillard : MonoBehaviour, Interactable {
 
     public void Interact()
     {
-        poolMain.loadGame();
+        if (player.HasHoop)
+        {
+            poolMain.loadGame();
+        }
     }
 
     public bool IsInteractable()
     {
-        return true;
+
+        return player.HasHoop;
     }
 
     public bool IsNPC()

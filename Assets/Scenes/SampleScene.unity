@@ -336,6 +336,7 @@ MonoBehaviour:
   objectiveAttached: {fileID: 11400000, guid: c8102270ef9ddf44eb3e185243a13063, type: 2}
   playerQuestManager: {fileID: 1234628656}
   shouldDissapearOnInteract: 0
+  hoopAttached: 0
 --- !u!4 &6975773 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400044, guid: ea623d66a6b09994ea0ac02d50382472,
@@ -19814,6 +19815,7 @@ MonoBehaviour:
   objectiveAttached: {fileID: 11400000, guid: 44f8a7ecc0ce09740ac004281ea16cd6, type: 2}
   playerQuestManager: {fileID: 1234628656}
   shouldDissapearOnInteract: 1
+  hoopAttached: 0
 --- !u!65 &634270600
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33051,6 +33053,7 @@ MonoBehaviour:
   descriptionDetailedQuest: {fileID: 352153097}
   objectivesDetailedQuest: {fileID: 1535366306}
   rewardsDetailedQuest: {fileID: 270606222}
+  pool: {fileID: 1608008258}
 --- !u!1001 &1242718943
 Prefab:
   m_ObjectHideFlags: 0
@@ -38175,6 +38178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a86b1a82dbc1de419dab3b455709a2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1234628650}
   poolMain: {fileID: 1608008264}
 --- !u!64 &1608008263
 MeshCollider:
@@ -38862,6 +38866,7 @@ MonoBehaviour:
   objectiveAttached: {fileID: 11400000, guid: 44f8a7ecc0ce09740ac004281ea16cd6, type: 2}
   playerQuestManager: {fileID: 1234628656}
   shouldDissapearOnInteract: 1
+  hoopAttached: 1
 --- !u!4 &1679106722 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400130, guid: c501a8a7118966c4bb715d3a9efaa62f,
