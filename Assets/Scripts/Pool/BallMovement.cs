@@ -12,6 +12,7 @@ namespace Pool
         private Main game;
         private bool onTable;
         private Vector3 prevPosition;
+        private bool fellInHole;
 
 
         // Use this for initialization
@@ -21,7 +22,9 @@ namespace Pool
             rb = GetComponent<Rigidbody>();
             speed = 5;
             onTable = true;
+            prevPosition = transform.localPosition;
             game = GameObject.Find("Table").GetComponent<Main>();
+            fellInHole = false;
         }
 
         // Return yes if the ball has collision
@@ -38,7 +41,7 @@ namespace Pool
             {
                 if (rb.velocity.magnitude < 0.05)
                 {
-                    rb.velocity = Vector3.zero;
+                    stop();
                 }
 
                 if (rb.velocity.y > 0)
@@ -46,16 +49,30 @@ namespace Pool
                     rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
                 }
 
-                if (rb.position.y < 0.8 && !onTable)
+                if (fellInHole && game.noBallIsMoving())
                 {
-                    game.loadGame();
+                    resetToPrevPos();
+                    fellInHole = false;
                 }
             }
 
         }
 
+        public void stop()
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+
+        public void resetToPrevPos()
+        {
+            transform.localPosition = prevPosition;
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+
         public void savePrevPos() {
-            prevPosition = transform.position;
+            prevPosition = transform.localPosition;
         }
 
         public void increaseSpeedFct()
@@ -89,6 +106,14 @@ namespace Pool
         {
             if (col.gameObject.name == "Table") {
                 onTable = false;
+            }
+        }
+
+        void OnCollisionEnter(Collision col)
+        {
+            if (col.gameObject.name == "Bottom")
+            {
+                fellInHole = true;
             }
         }
 
