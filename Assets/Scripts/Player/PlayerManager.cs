@@ -8,6 +8,10 @@ using UnityEngine.UI;
 [RequireComponent(typeof(PlayerQuestManager))]
 public class PlayerManager : MonoBehaviour {
 
+    private float sinceLast;
+    private AudioSource source;
+    private bool alternance = false;
+
     #region ComponentRequired
     private new Rigidbody rigidbody;
 
@@ -93,6 +97,8 @@ public class PlayerManager : MonoBehaviour {
     #endregion
 
     private void Start () {
+        this.sinceLast = 0.0f;
+        this.source = GetComponent<AudioSource>();
         this.isMoving = false;
         this.isInMenu = false;
         this.interactable = null;
@@ -182,6 +188,23 @@ public class PlayerManager : MonoBehaviour {
 
         if(horizontal != 0 || vertical != 0)
         {
+            if (this.sinceLast >= 0.5f)
+            {
+                alternance = !alternance;
+                if (alternance)
+                {
+                    this.source.panStereo = -0.35f;
+                    this.source.pitch = Random.Range(0.50f, 1.60f);
+                }
+                else
+                {
+                    this.source.panStereo = 0.35f;
+                    this.source.pitch = Random.Range(0.50f, 1.60f);
+                }
+                this.source.Play();
+                this.sinceLast = 0.0f;
+            } 
+
             isMoving = true;
             Vector3 verticalDirection = transform.right * horizontal;
             Vector3 horizontalDirection = transform.forward * vertical;
@@ -207,6 +230,8 @@ public class PlayerManager : MonoBehaviour {
             graphic.VelocityHorizontalAnimation = 0f;
             graphic.VelocityVerticalAnimation = 0f;
         }
+
+        this.sinceLast += Time.deltaTime;
     }
 
     private void ManageRotationUpdate()
