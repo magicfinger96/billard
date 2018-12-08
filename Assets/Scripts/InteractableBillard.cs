@@ -19,16 +19,17 @@ public class InteractableBillard : MonoBehaviour, Interactable {
 
     public void Interact()
     {
-        if (player.HasHoop)
+        poolMain.loadGame();
+        /*if (player.HasHoop)
         {
-            poolMain.loadGame();
-        }
+            poolMain.loadGame(); REMETTRE APRES 
+        }*/
     }
 
     public bool IsInteractable()
     {
-
-        return player.HasHoop;
+        return true;
+        //return player.HasHoop; REMETTRE APRES
     }
 
     public bool IsNPC()

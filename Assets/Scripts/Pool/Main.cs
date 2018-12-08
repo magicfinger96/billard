@@ -31,6 +31,8 @@ namespace Pool
         [SerializeField]
         private GameObject hoop;
         private bool itsEnd;
+        [SerializeField]
+        private GameObject lamp;
 
         void Start()
         {
@@ -123,12 +125,16 @@ namespace Pool
             UIPanelMenu.gameObject.SetActive(false);
             UIPanel.gameObject.SetActive(false);
             Time.timeScale = 1f;
+            lamp.SetActive(true);
         }
 
         // Initialize the game, changeTarget true if the target has to be changed
         public void init(bool changeTarget)
         {
             endText.gameObject.SetActive(false);
+            cameraPool.GetComponent<CameraController>().makeMoveLeft(false);
+            cameraPool.GetComponent<CameraController>().makeMoveRight(false);
+            cameraPool.GetComponent<CameraController>().showNearView();
             itsEnd = false;
             UnPause();
             UIPanel.gameObject.SetActive(true);
@@ -156,6 +162,8 @@ namespace Pool
 
             UIPanel.gameObject.SetActive(true);
             increaseSpeed = false;
+
+            cameraPool.GetComponent<CameraController>().reinit();
         }
 
         public void restart()
@@ -171,7 +179,7 @@ namespace Pool
             cameraPool.gameObject.SetActive(true);
             GameObject.Find("Canvas").GetComponent<GUIManager>().HideInteractableTextContent();
             GameObject.Find("Canvas").GetComponent<GUIManager>().HideHUDPlayer();
-
+            lamp.SetActive(false);
             init(true);
 
         }
@@ -204,6 +212,27 @@ namespace Pool
                         ball.GetComponent<BallMovement>().increaseSpeedFct();
                     }
 
+                    if (Input.GetAxis("Mouse ScrollWheel") > 0f) // forward
+                    {
+                        cameraPool.GetComponent<CameraController>().makeZoomIn();
+                    }
+                    else if (Input.GetAxis("Mouse ScrollWheel") < 0f) // backwards
+                    {
+                        cameraPool.GetComponent<CameraController>().makeZoomOut();
+
+                    } else if (Input.GetKeyDown(KeyCode.Q))
+                    {
+                        cameraPool.GetComponent<CameraController>().makeMoveLeft(true);
+                    } else if (Input.GetKeyDown(KeyCode.D))
+                    {
+                        cameraPool.GetComponent<CameraController>().makeMoveRight(true);
+                    } else if (Input.GetKeyUp(KeyCode.Q))
+                    {
+                        cameraPool.GetComponent<CameraController>().makeMoveLeft(false);
+                    } else if (Input.GetKeyUp(KeyCode.D))
+                    {
+                        cameraPool.GetComponent<CameraController>().makeMoveRight(false);
+                    }
 
                     RaycastHit hit;
 
