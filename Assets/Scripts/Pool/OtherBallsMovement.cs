@@ -5,20 +5,11 @@ using UnityEngine;
 namespace Pool
 {
 
-    public class OtherBallsMovement : MonoBehaviour
+    public class OtherBallsMovement : AllBalls
     {
-        private Main game;
-        private bool fellInHole;
-        private Rigidbody rb;
-
         // Use this for initialization
         void Start()
         {
-
-            game = GameObject.Find("Table").GetComponent<Main>();
-            fellInHole = false;
-            rb = GetComponent<Rigidbody>();
-
         }
 
         // Update is called once per frame
@@ -31,11 +22,16 @@ namespace Pool
                     stop();
                 }
 
+                if (rb.angularVelocity.magnitude < 0.02f)
+                {
+                    rb.angularVelocity = Vector3.zero;
+                }
+
                 if (rb.velocity.y > 0)
                 {
                     rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
                 }
-
+                
                 if (fellInHole && game.noBallIsMoving())
                 {
                     if (!game.increaseNbFallenBalls())
@@ -50,25 +46,6 @@ namespace Pool
                     fellInHole = false;
                 }
 
-            }
-        }
-
-        public void stop()
-        {
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-        }
-
-        public bool isMoving()
-        {
-            return !(rb.velocity.x == 0 && rb.velocity.y == 0 && rb.velocity.z == 0);
-        }
-
-        void OnCollisionEnter(Collision col)
-        {
-            if (col.gameObject.name == "Bottom")
-            {
-                fellInHole = true;
             }
         }
     }

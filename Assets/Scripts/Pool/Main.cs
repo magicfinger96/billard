@@ -33,6 +33,18 @@ namespace Pool
         private bool itsEnd;
         [SerializeField]
         private GameObject lamp;
+        private bool chooseIntensity;
+        [SerializeField]
+        private Slider intensity;
+        private float timeIntensity;
+        [SerializeField]
+        private GameObject cornerGroup;
+        [SerializeField]
+        private GameObject holeFillerGroup;
+        [SerializeField]
+        private GameObject ballGroup;
+        private GameObject line;
+
 
         void Start()
         {
@@ -55,18 +67,20 @@ namespace Pool
             };
 
             int i = 0;
-            foreach (Transform child in GameObject.Find("HoleFillers").transform)
+            foreach (Transform child in holeFillerGroup.transform)
             {
                 holeFillers[i++] = child.gameObject;
             }
 
             i = 0;
-            foreach (Transform child in GameObject.Find("Balls").transform)
+            foreach (Transform child in ballGroup.transform)
             {
                 positionOtherBalls[i++] = child.position;
             }
             cameraPool.gameObject.SetActive(false);
             positionBall = ball.GetComponent<Transform>().position;
+            line = new GameObject();
+            line.AddComponent<LineRenderer>();
         }
 
         // Quand l'arceau a été trouvé
@@ -122,28 +136,31 @@ namespace Pool
             cameraPool.gameObject.SetActive(false);
             player.SetActive(true);
             init(false);
+            line.SetActive(false);
             UIPanelMenu.gameObject.SetActive(false);
             UIPanel.gameObject.SetActive(false);
             Time.timeScale = 1f;
             lamp.SetActive(true);
+            stopAllSounds();
         }
 
         // Initialize the game, changeTarget true if the target has to be changed
         public void init(bool changeTarget)
         {
+            reinitAllFall();
             endText.gameObject.SetActive(false);
             cameraPool.GetComponent<CameraController>().makeMoveLeft(false);
             cameraPool.GetComponent<CameraController>().makeMoveRight(false);
             cameraPool.GetComponent<CameraController>().showNearView();
             itsEnd = false;
-            UnPause();
             UIPanel.gameObject.SetActive(true);
             ball.GetComponent<BallMovement>().stop();
             ball.transform.position = positionBall;
             int i = 0;
-            foreach (Transform child in GameObject.Find("Balls").transform)
+            foreach (Transform child in ballGroup.transform)
             {
                 child.position = positionOtherBalls[i++];
+                child.gameObject.SetActive(true);
                 child.GetComponent<OtherBallsMovement>().stop();
             }
 
@@ -164,12 +181,18 @@ namespace Pool
             increaseSpeed = false;
 
             cameraPool.GetComponent<CameraController>().reinit();
+            chooseIntensity = false;
+            intensity.gameObject.SetActive(false);
+
+            UnPause();
         }
 
         public void restart()
         {
-            UnPause();
+            stopAllSounds();
+            stopAllBalls();
             init(true);
+
         }
 
         public void loadGame()
@@ -195,23 +218,6 @@ namespace Pool
 
                 if (!isPaused)
                 {
-                    if (Input.GetMouseButtonDown(0) && noBallIsMoving())
-                    {
-                        increaseSpeed = true;
-                    }
-
-                    if (increaseSpeed && Input.GetMouseButtonUp(0) && noBallIsMoving())
-                    {
-                        ball.GetComponent<BallMovement>().savePrevPos();
-                        ball.GetComponent<BallMovement>().move();
-                        increaseSpeed = false;
-                    }
-
-                    if (increaseSpeed)
-                    {
-                        ball.GetComponent<BallMovement>().increaseSpeedFct();
-                    }
-
                     if (Input.GetAxis("Mouse ScrollWheel") > 0f) // forward
                     {
                         cameraPool.GetComponent<CameraController>().makeZoomIn();
@@ -236,23 +242,76 @@ namespace Pool
 
                     RaycastHit hit;
 
-                    /*Ray ray = cameraPool.ScreenPointToRay(Input.mousePosition);
+                    Ray ray = cameraPool.ScreenPointToRay(Input.mousePosition);
                     if (Physics.Raycast(ray, out hit))
                     {
-                        if (hit.collider.gameObject.name == "Table" && noBallIsMoving())
+                        if ((hit.collider.gameObject.name == "Table" || hit.collider.transform.IsChildOf(cornerGroup.transform)
+                            || hit.collider.transform.IsChildOf(holeFillerGroup.transform) 
+                            || hit.collider.transform.IsChildOf(ballGroup.transform)) && noBallIsMoving())
                         {
-                            Vector3 pos = (new Vector3(hit.point.x, 0, hit.point.z) - new Vector3(ball.transform.position.x, 0, ball.transform.position.z)).normalized;
+                            Vector3 dir = (new Vector3(hit.point.x, 0, hit.point.z) - new Vector3(ball.transform.position.x, 0, ball.transform.position.z)).normalized;
+                            Ray ray2 = new Ray(ball.transform.position,dir);
+                            RaycastHit hit2;
+                            Physics.Raycast(ray2, out hit2);
+                            DrawLine(ball.transform.position, hit2.point);
+                            line.SetActive(true);
+                        } else
+                        {
+                            line.SetActive(false);
                         }
-                    }*/
+                    }
+
+                    if (Input.GetMouseButtonDown(0) && noBallIsMoving())
+                    {
+                        chooseIntensity = true;
+                        timeIntensity = 0;
+                        intensity.value = 0;
+                        intensity.gameObject.SetActive(true);
+                    }
+
+                    if (chooseIntensity && Input.GetMouseButtonUp(0) && noBallIsMoving())
+                    {
+                        chooseIntensity = false;
+                        ball.GetComponent<BallMovement>().savePrevPos();
+                        ball.GetComponent<BallMovement>().move();
+                        intensity.gameObject.SetActive(false);
+                        line.SetActive(false);
+                    }
+
+                    if (chooseIntensity)
+                    {
+                        timeIntensity += Time.deltaTime;
+                        if (timeIntensity >= 0.05f)
+                        {
+                            ball.GetComponent<BallMovement>().increaseSpeedFct();
+                            intensity.value = ball.GetComponent<BallMovement>().getIntensity();
+                            timeIntensity = 0f;
+                        }
+                        
+                        
+                    }
                 }
             }
 
 
         }
 
+        void DrawLine(Vector3 start, Vector3 end)
+        {
+            line.transform.position = start;            
+            LineRenderer lr = line.GetComponent<LineRenderer>();
+            lr.material = new Material(Shader.Find("Sprites/Default"));
+            lr.material.color = new Color(1,1,1,0.50f);
+            lr.startWidth = 0.01f;
+            lr.endWidth = 0.01f;
+            lr.SetPosition(0, start);
+            lr.SetPosition(1, end);
+            //GameObject.Destroy(myLine, duration);
+        }
+
         public bool noBallIsMoving()
         {
-            foreach (Transform child in GameObject.Find("Balls").transform)
+            foreach (Transform child in ballGroup.transform)
             {
                 if (child.GetComponent<OtherBallsMovement>().isMoving())
                 {
@@ -264,10 +323,11 @@ namespace Pool
 
         public void Pause()
         {
+            Time.timeScale = 0f; //pause the game
             increaseSpeed = false;
             isPaused = true;
             UIPanelMenu.gameObject.SetActive(true); //turn on the pause menu
-            Time.timeScale = 0f; //pause the game
+            pauseAllSounds(true);
         }
 
         // Return if the player is playing pool
@@ -281,6 +341,7 @@ namespace Pool
             isPaused = false;
             UIPanelMenu.gameObject.SetActive(false); //turn off pause menu
             Time.timeScale = 1f; //resume game
+            pauseAllSounds(false);
         }
         
 
@@ -288,6 +349,35 @@ namespace Pool
         {
             return isPaused;
         }
+
+        public void stopAllSounds()
+        {
+            ball.GetComponent<BallMovement>().stopSounds();
+        }
+
+        public void pauseAllSounds(bool state)
+        {
+            ball.GetComponent<BallMovement>().pauseSounds(state);
+        }
+
+        public void reinitAllFall()
+        {
+            foreach (Transform child in ballGroup.transform)
+            {
+                child.GetComponent<OtherBallsMovement>().reinitFall();
+            }
+            ball.GetComponent<BallMovement>().reinitFall();
+        }
+
+        public void stopAllBalls()
+        {
+            foreach (Transform child in ballGroup.transform)
+            {
+                child.GetComponent<OtherBallsMovement>().stop();
+            }
+            ball.GetComponent<BallMovement>().stop();
+        }
+   
 
     }
 }
