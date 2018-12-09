@@ -27,6 +27,11 @@ namespace Pool
         // Use this for initialization
         void Start()
         {
+            source = GetComponent<AudioSource>();
+            rb = GetComponent<Rigidbody>();
+            isPlayingSikingNoise = false;
+            game = GameObject.Find("Table").GetComponent<Main>();
+            fellInHole = false;
         }
 
         // Update is called once per frame
