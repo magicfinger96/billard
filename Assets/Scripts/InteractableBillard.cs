@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InteractableBillard : MonoBehaviour, Interactable {
 
     public PlayerManager player;
     public Pool.Main poolMain;
+    public Text textInfo;
 
     public string GetInteractableText()
     {
@@ -19,11 +21,25 @@ public class InteractableBillard : MonoBehaviour, Interactable {
 
     public void Interact()
     {
-        poolMain.loadGame();
-        /*if (player.HasHoop)
+        //poolMain.loadGame();
+        if (player.HasHoop)
         {
-            poolMain.loadGame(); REMETTRE APRES 
-        }*/
+            poolMain.loadGame(); //REMETTRE APRES 
+        }
+        else
+        {
+            textInfo.text = "Vous ne pouvez pas jouer, il semblerait qu'il manque un objet... Renseignez vous auprès des gens";
+            textInfo.gameObject.SetActive(true);
+            textInfo.CrossFadeAlpha(0, 0.0f, false);
+            textInfo.CrossFadeAlpha(1, 1.0f, false);
+            StartCoroutine(FadeOutTextQuestSucceed());
+        }
+    }
+
+    IEnumerator FadeOutTextQuestSucceed()
+    {
+        yield return new WaitForSeconds(3f);
+        textInfo.CrossFadeAlpha(0, 1.0f, false);
     }
 
     public bool IsInteractable()

@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Name: John_Intro_NeverMeet01
   m_EditorClassIdentifier: 
   title: 
+  isQuestAttached: 0
+  isFinalQuestDiscussion: 0
   content:
-  - "Bonjour l'ami, on s'est jamais vu par ici je pense !\r\nC'est la premi\xE8re
+  - "Bonjour jeune fille, on ne s'est jamais vu par ici je pense !\r\nC'est la premi\xE8re
     fois que tu traines par ici tu dois \xEAtre perdu !"
   relatedDiscussions:
   - {fileID: 11400000, guid: 36c890eef36b888428e91174719deb04, type: 2}

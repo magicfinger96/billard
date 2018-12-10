@@ -11,18 +11,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4102b4c209fad4c8cf9ec4fb147e10, type: 3}
   m_Name: Robert_AboutYou_Billard_QuestUnseen
   m_EditorClassIdentifier: 
-  title: Le billard ? C'est quoi ?
+  title: Comment joue t-on au billard ?
   isQuestAttached: 0
   isFinalQuestDiscussion: 0
   content:
   - "Alors \xE7a l'ami, il me faudrait des livres et des livres pour pouvoir t'expliquer
-    l'art du billard. "
-  - Pour faire simple, il suffit de jouer avec une canne en tapant dans la boule blanche
-    pour faire rentrer les autres boules dans les trous.
-  - "Les r\xE8gles sont simples comme bonjour, mais la maitr\xEEse te prend des ann\xE9es
-    !"
-  - "Tu as l'air int\xE9ress\xE9, tu sais quoi, trouves l'arceau \xE0 l'\xE9tage,
+    l'art du billard et les tonnes de techniques que l'on peut utiliser pour arriver
+    \xE0 nos fins."
+  - "Pour faire simple, tu as 3 boules claires que tu dois rentrer dans les trous
+    gr\xE2ce \xE0 la balle fonc\xE9e. Un seul trou avec un arceau est disponible \xE0
+    la fois pour rentrer la balle."
+  - "Pour faire simple, tu as 3 boules claires que tu dois rentrer dans les trous
+    gr\xE2ce \xE0 la balle fonc\xE9e. Un seul trou avec un arceau est disponible \xE0
+    la fois pour rentrer la balle."
+  - "Tu remarqueras aussi que pour les trous non utilis\xE9s, on place des piliers
+    pour g\xE9ner le joueur et rendre cela plus compliqu\xE9 encore, quand je te dis
+    que \xE7a ne s'apprend pas en un jour ahah."
+  - "Finalement, le but est de rentrer les trois balles avec le moins de coup possible.
+    On raconte qu'un joueur appel\xE9 Karl \xE0 r\xE9ussi un 3 coups un jour, mais
+    je ne l'ai jamais vu de mes propres yeux."
+  - "Voila de mani\xE8re tr\xE8s rapide. Comme tu peux le voir, les r\xE8gles sont
+    tr\xE8s simples, mais la maitrise prend des ann\xE9es et ce n'est pas demain la
+    veille que tu feras un trois coups ahahah."
+  - "Tu as l'air int\xE9ress\xE9 dis donc, tu sais quoi, trouves l'arceau \xE0 l'\xE9tage,
     et va t'entrainer, tu verras c'est super divertissant !"
   relatedDiscussions:
   - {fileID: 11400000, guid: a7e8b5a3d1895454192320d6d68c7c9a, type: 2}
-  - {fileID: 11400000, guid: 1f17c60df4f1a934ba1329c2a1daa3cc, type: 2}

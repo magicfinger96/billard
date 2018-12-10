@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class OpenCloseDoor : MonoBehaviour, Interactable {
 
+    private new AudioSource audio;
     private Animator anim;
     private bool isOpeningClosing;
     private bool isInteractable;
@@ -12,6 +13,7 @@ public class OpenCloseDoor : MonoBehaviour, Interactable {
 	void Start ()
     {
         isOpeningClosing = false;
+        audio = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         isInteractable = true;
 	}
@@ -33,11 +35,13 @@ public class OpenCloseDoor : MonoBehaviour, Interactable {
     {
         isInteractable = false;
         anim.SetBool("ShouldOpen", true);
+        audio.Play();
         yield return new WaitForSeconds(1.5f);
 
         yield return new WaitForSeconds(3);
         anim.SetBool("ShouldClose", true);
-        
+        audio.Play();
+
         yield return new WaitForSeconds(1.5f);
         isOpeningClosing = false;
         isInteractable = true;

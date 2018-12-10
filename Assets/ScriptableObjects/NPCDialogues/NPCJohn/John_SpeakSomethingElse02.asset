@@ -11,7 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4102b4c209fad4c8cf9ec4fb147e10, type: 3}
   m_Name: John_SpeakSomethingElse02
   m_EditorClassIdentifier: 
-  title: "Parlons de choses plus r\xE9jouissantes"
+  title: D'accord, parlons d'autre chose
+  isQuestAttached: 0
+  isFinalQuestDiscussion: 0
   content:
   - Oui, de quoi veux-tu parler ?
   relatedDiscussions:

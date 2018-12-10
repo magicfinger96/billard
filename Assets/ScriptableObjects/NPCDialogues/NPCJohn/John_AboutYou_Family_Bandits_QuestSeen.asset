@@ -11,12 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4102b4c209fad4c8cf9ec4fb147e10, type: 3}
   m_Name: John_AboutYou_Family_Bandits_QuestSeen
   m_EditorClassIdentifier: 
-  title: C'est courant les bandits par ici ?
+  title: Vous ne savez donc pas y jouer ?
+  isQuestAttached: 0
+  isFinalQuestDiscussion: 0
   content:
-  - "Bah pas tant que \xE7a \xE0 vrai dire ... Il y a juste les bandits de Marco qui
-    tra\xEEne de temps en temps.\r\nIls tuent toutes les personnes nuisant leurs int\xEAr\xEAts
-    et le nouveau commandant de la garde ne bouge pas le p'tit pouce...\r\nIl est
-    peut \xEAtre de leur c\xF4t\xE9 qui sait !"
+  - Ohlah non pas du tout, je ne suis toujours que spectatrice mais je n'ai jamais
+    vraiment compris le principe si ce n'est qu'on joue avec des boules..
   relatedDiscussions:
   - {fileID: 11400000, guid: 569e3e0cb0350434095030fe6965d36f, type: 2}
   - {fileID: 11400000, guid: 8ef8a7f83de4aef4586babc30aa935cd, type: 2}

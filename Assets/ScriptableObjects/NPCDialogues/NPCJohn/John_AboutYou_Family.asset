@@ -11,16 +11,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4102b4c209fad4c8cf9ec4fb147e10, type: 3}
   m_Name: John_AboutYou_Family
   m_EditorClassIdentifier: 
-  title: Vous avez de la famille ?
+  title: C'est quoi cette table ?
   isQuestAttached: 0
+  isFinalQuestDiscussion: 0
   content:
-  - "Bien-s\xFBr j'ai deux merveilleux gar\xE7ons et une charmante fille de 14 ans
-    en pleine force de l'\xE2ge comme on dit...\r\nJe me fais des cheveux blancs tous
-    les jours en priant pour qu'ils ne fassent pas de b\xEAtises."
-  - "J'\xE9tais mari\xE9 aussi bien-s\xFBr... jusqu'\xE0 ce que ces saloperies de
-    bandit ne tuent ma femme.\r\nJ'aime pas trop en parler \xE0 vrai dire.. je sais
-    pas pourquoi je te raconte \xE7a .."
-  - Tu veux savoir autre chose ?
+  - "Oh non pas vraiment, je sais que le propri\xE9taires de l'auberge l'a achet\xE9
+    il y a un petit moment et qu'il passe maintenant ces journ\xE9es \xE0 y jouer."
+  - 'Il raconte que c''est la grande tandance en ville et que tout le monde devrait
+    essayer.. '
+  - "Personnellement, \xE7a ne m'int\xE9resse pas du tout mais je peux comprendre
+    l'engouement."
   relatedDiscussions:
   - {fileID: 11400000, guid: a9e6af1121002cf4c9846d8c69646164, type: 2}
   - {fileID: 11400000, guid: 569e3e0cb0350434095030fe6965d36f, type: 2}

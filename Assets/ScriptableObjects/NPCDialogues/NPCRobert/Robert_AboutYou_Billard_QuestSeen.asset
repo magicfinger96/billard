@@ -11,16 +11,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4102b4c209fad4c8cf9ec4fb147e10, type: 3}
   m_Name: Robert_AboutYou_Billard_QuestSeen
   m_EditorClassIdentifier: 
-  title: Le billard ? C'est quoi ?
+  title: Comment joue t-on au billard ?
   isQuestAttached: 0
   isFinalQuestDiscussion: 0
   content:
   - "Alors \xE7a l'ami, il me faudrait des livres et des livres pour pouvoir t'expliquer
-    l'art du billard. "
-  - Pour faire simple, il suffit de jouer avec une canne en tapant dans la boule blanche
-    pour faire rentrer les autres boules dans les trous.
-  - "Les r\xE8gles sont simples comme bonjour, mais la maitr\xEEse te prend des ann\xE9es
-    !"
+    l'art du billard et les tonnes de techniques que l'on peut utiliser pour arriver
+    \xE0 nos fins."
+  - "Pour faire simple, tu as 3 boules claires que tu dois rentrer dans les trous
+    gr\xE2ce \xE0 la balle fonc\xE9e. Un seul trou avec un arceau est disponible \xE0
+    la fois pour rentrer la balle."
+  - "Tu remarqueras aussi que pour les trous non utilis\xE9s, on place des piliers
+    pour g\xE9ner le joueur et rendre cela plus compliqu\xE9 encore, quand je te dis
+    que \xE7a ne s'apprend pas en un jour ahah."
+  - "Tu remarqueras que les bords  et les piliers sont utilisables pour des rebonds,
+    ils sont recouverts d'un fluide que je ne connais pas et qui permet de superbement
+    rebondir m\xEAme sur le bois."
+  - "Finalement, le but est de rentrer les trois balles avec le moins de coup possible.
+    On raconte qu'un joueur appel\xE9 Karl \xE0 r\xE9ussi un 3 coups un jour, mais
+    je ne l'ai jamais vu de mes propres yeux."
+  - "Voila de mani\xE8re tr\xE8s rapide. Comme tu peux le voir, les r\xE8gles sont
+    tr\xE8s simples, mais la maitrise prend des ann\xE9es et ce n'est pas demain la
+    veille que tu feras un trois coups ahahah."
   relatedDiscussions:
   - {fileID: 11400000, guid: 47ff7abc6414d874cb53991f2618ef2e, type: 2}
   - {fileID: 11400000, guid: f94ea8d52f76e9a47931eb63fe6afd42, type: 2}

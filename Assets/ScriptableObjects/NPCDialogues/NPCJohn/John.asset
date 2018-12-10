@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb998a6918114b42bd25cb098a7e12e, type: 3}
   m_Name: John
   m_EditorClassIdentifier: 
-  name: John
+  name: Esmeralda
   hasAlreadyMeetPlayer: 0
   hasAlreadyProposeQuest: 0
   discussionNeverMeet:

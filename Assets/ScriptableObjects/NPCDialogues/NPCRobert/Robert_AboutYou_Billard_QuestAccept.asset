@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4102b4c209fad4c8cf9ec4fb147e10, type: 3}
   m_Name: Robert_AboutYou_Billard_QuestAccept
   m_EditorClassIdentifier: 
-  title: D'accord je vais trouver la canne !
+  title: D'accord je vais trouver l'arceau !
   isQuestAttached: 1
   isFinalQuestDiscussion: 1
   content: []

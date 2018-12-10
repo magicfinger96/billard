@@ -64,6 +64,7 @@ public class InteractableNPCManager : MonoBehaviour {
         currentDiscussion = null;
         currentDiscussionContentIndex = -1;
         player.ExitInteractionWithNPC();
+        Cursor.visible = false;
     }
 
     public void SetCurrentSpeaker(InteractableNPC speaker)

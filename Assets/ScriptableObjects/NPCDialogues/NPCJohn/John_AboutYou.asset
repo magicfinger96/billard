@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Name: John_AboutYou
   m_EditorClassIdentifier: 
   title: Que pouvez-vous me dire sur vous ?
+  isQuestAttached: 0
+  isFinalQuestDiscussion: 0
   content:
-  - "Eh bien pas mal de choses mon jeune ami, tu sais \xE0 mon \xE2ge on a vu du pays...\r\nMais
-    comme tu peux le voir maintenant, je suis un vieillard qui passe ses journ\xE9es
-    dans un endroit piteux.."
-  - "Enfin bon j'arr\xEAte de m'appitoyer sur mon sort, que veux-tu savoir ?"
+  - "Oh tu sais, je ne suis qu'une fermi\xE8re qui passe de temps en temps par ici
+    pour me r\xE9chauffer et voir si les gens sont intriqu\xE9 par la table que Robert
+    \xE0 pay\xE9 une fortune."
+  - "Enfin, je suppose que tu n'es pas venu pour entendre mes journ\xE9es passionnantes,
+    que veux-tu savoir ?"
   relatedDiscussions:
   - {fileID: 11400000, guid: 169480e2065933e469f14f93021ee01f, type: 2}
   - {fileID: 11400000, guid: fffc13e7a9e4a174fb967835538e1352, type: 2}

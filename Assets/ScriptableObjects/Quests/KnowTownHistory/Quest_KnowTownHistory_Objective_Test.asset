@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: Quest_KnowTownHistory_Objective_Test
   m_EditorClassIdentifier: 
   isComplete: 0
-  description: Aller faire un premier test
+  description: "Aller parler \xE0 Robert"

@@ -17,10 +17,14 @@ MonoBehaviour:
   content:
   - Les jeunes de maintenant sont bien curieux dis donc ! M'enfin je me sens de bonne
     humeur aujourd'hui !
-  - "Moi c'est Robert, cela fait quelques ann\xE9es que j'essaye de percer le myst\xE8re
-    de cette myst\xE9rieuse table qui se trouve en haut..."
-  - "A vrai dire, je dois dire que je pense en avoir d\xE9couvert le but, et que je
-    suis plut\xF4t bon \xE0 cela ! J'ai appel\xE9 ce passe temps \"Le billard \""
+  - "Moi c'est Robert, outre le fait que je sois le propri\xE9taire de cette petite
+    auberge, j'adore passer mon temps \xE0 jouer \xE0 l'\xE9trange table que tu peux
+    voir derri\xE8re toi."
+  - "Ca peut paraitre \xE9trange pour les gens de la campagne, mais c'est un jeu tr\xE8s
+    en vogue dans les grandes villes. On appelle \xE7a le billard, et beaucoup de
+    personnes paient pour en avoir un."
+  - "A vrai dire, je suis plut\xF4t bon maintenant et je pense pouvoir rivaliser avec
+    les gens de la ville."
   relatedDiscussions:
   - {fileID: 11400000, guid: 33589a9213be1ea44b89a810ba9b75e1, type: 2}
   - {fileID: 11400000, guid: d4dc8e89d8fdea0419dfaada76530dbc, type: 2}

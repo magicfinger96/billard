@@ -11,8 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3bc347233ec4443a140a5fc6cfe9b4, type: 3}
   m_Name: John_AboutYou_Family_Bandits_Quest
   m_EditorClassIdentifier: 
-  title: C'est courant les bandits par ici ?
+  title: Vous ne savez donc pas y jouer ?
   isQuestAttached: 1
+  isFinalQuestDiscussion: 0
   content: []
   relatedDiscussions: []
   questUnseen: {fileID: 11400000, guid: 86b2b76de58bd844bb01d37eff72f294, type: 2}

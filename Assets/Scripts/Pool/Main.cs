@@ -134,6 +134,7 @@ namespace Pool
 
         public void leaveGame()
         {
+            Cursor.visible = false;
             onGame = false;
             GameObject.Find("Canvas").GetComponent<GUIManager>().ShowInteractableTextContent();
             GameObject.Find("Canvas").GetComponent<GUIManager>().ShowHUDPlayer();
@@ -208,6 +209,7 @@ namespace Pool
 
         public void loadGame()
         {
+            Cursor.visible = true;
             onGame = true;
             player.SetActive(false);
             cameraPool.gameObject.SetActive(true);

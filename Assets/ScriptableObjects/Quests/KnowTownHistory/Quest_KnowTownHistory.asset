@@ -11,14 +11,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e03f9640e887cd45a2832ac87f4557d, type: 3}
   m_Name: Quest_KnowTownHistory
   m_EditorClassIdentifier: 
-  questNameGiver: John
+  questNameGiver: Esmeralda
   questId: 1
-  name: L'histoire du village...
-  brief: "Premi\xE8re rencontre"
+  name: "Parler au propri\xE9taire.."
+  brief: Premier contact
   needValidation: 0
-  description: "John vous a propos\xE9 d'aller parler \xE0 ... pour en savoir plus
-    sur l'histoire du village et des bandits alentours. Vous le trouverez probablement
-    pr\xE8s du bar."
+  description: "Esmeralda vous a propos\xE9 d'aller parler au propri\xE9taire de l'auberge,
+    Robert, pour en apprendre plus sur la myst\xE8rieuse table."
   objectives:
   - {fileID: 11400000, guid: c8102270ef9ddf44eb3e185243a13063, type: 2}
   rewards:

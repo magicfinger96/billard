@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3bc347233ec4443a140a5fc6cfe9b4, type: 3}
   m_Name: Robert_AboutYou_Billard_Quest
   m_EditorClassIdentifier: 
-  title: Le billard ? C'est quoi ?
+  title: Comment joue t-on au billard ?
   isQuestAttached: 1
   isFinalQuestDiscussion: 0
   content: []

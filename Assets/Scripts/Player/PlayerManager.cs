@@ -128,6 +128,7 @@ public class PlayerManager : MonoBehaviour {
                             guiManager.HideInteractableTextContent();
                             guiManager.HideHUDPlayer();
                             graphic.gameObject.SetActive(false);
+                            Cursor.visible = true;
                         }
                         interactable.Interact();
                     }
@@ -166,7 +167,7 @@ public class PlayerManager : MonoBehaviour {
 
     private void ManageMenuInteraction()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             isInMenu = !isInMenu;
             menuPanel.SetActive(isInMenu);
@@ -174,10 +175,12 @@ public class PlayerManager : MonoBehaviour {
             {
                 guiManager.ShowHUDPlayer();
                 quests.CloseDetailedQuest();
+                Cursor.visible = false;
             }
             else
             {
                 guiManager.HideHUDPlayer();
+                Cursor.visible = true;
             }
         }
     }

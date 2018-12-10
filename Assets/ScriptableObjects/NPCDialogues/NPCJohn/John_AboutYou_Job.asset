@@ -11,14 +11,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4102b4c209fad4c8cf9ec4fb147e10, type: 3}
   m_Name: John_AboutYou_Job
   m_EditorClassIdentifier: 
-  title: Vous travaillez encore ?
+  title: "Votre m\xE9tier est fatiguant ?"
   isQuestAttached: 0
+  isFinalQuestDiscussion: 0
   content:
-  - "Non plus maintenant .. J'\xE9tais garde dans le village avant, mais pas sous
-    les ordres de ce tordu de Paros.. \r\n34 ans que j'ai servi le village et aucune
-    reconnaissance si ce n'est me faire virer comme un malpropre quand j'ai exprim\xE9
-    mon m\xE9contentement lors de la mort de ma femme."
-  - "Du coup maintenant je travaille sur moi m\xEAme c'est pas mal non ?! ahahah"
+  - Oh, eh bien ce n'est pas de tout repos, surtout en ce moment avec le mauvais temps
+    qui ne semble pas vouloir partir. Mais cela permet de se nourir !
+  - "Et puis, j'ai mon mari qui s'occupe des t\xE2ches les plus compliqu\xE9es, je
+    suis surtout avec les animaux pour ma part."
   relatedDiscussions:
   - {fileID: 11400000, guid: f01f46ab108a70446bab8662296c4e4a, type: 2}
   - {fileID: 11400000, guid: 569e3e0cb0350434095030fe6965d36f, type: 2}

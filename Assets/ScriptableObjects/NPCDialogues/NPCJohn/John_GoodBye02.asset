@@ -11,6 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4102b4c209fad4c8cf9ec4fb147e10, type: 3}
   m_Name: John_GoodBye02
   m_EditorClassIdentifier: 
-  title: Rien l'ami, au revoir !
+  title: Rien, au revoir !
+  isQuestAttached: 0
+  isFinalQuestDiscussion: 0
   content: []
   relatedDiscussions: []

@@ -11,15 +11,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4102b4c209fad4c8cf9ec4fb147e10, type: 3}
   m_Name: John_AboutYou_Family_Bandits_QuestUnseen
   m_EditorClassIdentifier: 
-  title: C'est courant les bandits par ici ?
+  title: Vous ne savez donc pas y jouer ?
   isQuestAttached: 0
+  isFinalQuestDiscussion: 0
   content:
-  - "Bah pas tant que \xE7a \xE0 vrai dire ... Il y a juste les bandits de Marco qui
-    tra\xEEne de temps en temps.\r\nIls tuent toutes les personnes nuisant leurs int\xEAr\xEAts
-    et le nouveau commandant de la garde ne bouge pas le p'tit pouce...\r\nIl est
-    peut \xEAtre de leur c\xF4t\xE9 qui sait !"
-  - "Tu as l'air vachement interess\xE9 par l'histoire du village, pourquoi tu n'irais
-    pas voir Freddy ? Il en connait un rayon sur l'endroit."
+  - Ohlah non pas du tout, je ne suis toujours que spectatrice mais je n'ai jamais
+    vraiment compris le principe si ce n'est qu'on joue avec des boules..
+  - "Mais tu as l'air tr\xE8s intrigu\xE9 par cette table, je te conseille d'aller
+    voir Robert derri\xE8re le bar, c'est le plus \xE0 m\xEAme de te r\xE9pondre."
   relatedDiscussions:
   - {fileID: 11400000, guid: ddd32a34284c02a4b8ac9c565466b576, type: 2}
   - {fileID: 11400000, guid: 3e7562658d1af0646816c974995aad3f, type: 2}

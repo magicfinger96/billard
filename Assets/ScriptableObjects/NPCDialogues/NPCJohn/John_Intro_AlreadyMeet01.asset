@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Name: John_Intro_AlreadyMeet01
   m_EditorClassIdentifier: 
   title: 
+  isQuestAttached: 0
+  isFinalQuestDiscussion: 0
   content:
-  - "Hey l'ami, content de te revoir ! \r\nJe peux t'aider ?"
+  - "Bonjour voyageuse, contente de te revoir ! \r\nJe peux t'aider ?"
   relatedDiscussions:
   - {fileID: 11400000, guid: 36c890eef36b888428e91174719deb04, type: 2}
   - {fileID: 11400000, guid: 9a9ed87101e289f4fbcdde55f9c246c3, type: 2}
