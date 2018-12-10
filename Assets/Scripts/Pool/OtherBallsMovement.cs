@@ -31,7 +31,8 @@ namespace Pool
                 {
                     rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
                 }
-                
+
+                //Debug.Log("ETAT de" +rb.name+": "+fellInHole);
                 if (fellInHole && game.noBallIsMoving())
                 {
                     if (!game.increaseNbFallenBalls())
@@ -43,6 +44,7 @@ namespace Pool
                     {
                         game.end();
                     }
+                    //Debug.Log("desactive: " + rb.name);
                     fellInHole = false;
                 }
 
