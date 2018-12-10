@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4102b4c209fad4c8cf9ec4fb147e10, type: 3}
   m_Name: John_AboutYou_Family_Bandits_QuestReject
   m_EditorClassIdentifier: 
-  title: "Je ne suis pas interress\xE9 !"
+  title: "Je ne suis pas interress\xE9e !"
   isQuestAttached: 0
   isFinalQuestDiscussion: 1
   content: []

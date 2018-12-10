@@ -16,7 +16,7 @@ MonoBehaviour:
   isFinalQuestDiscussion: 0
   content:
   - "Bonjour jeune fille, on ne s'est jamais vu par ici je pense !\r\nC'est la premi\xE8re
-    fois que tu traines par ici tu dois \xEAtre perdu !"
+    fois que tu traines par ici tu dois \xEAtre perdue !"
   relatedDiscussions:
   - {fileID: 11400000, guid: 36c890eef36b888428e91174719deb04, type: 2}
   - {fileID: 11400000, guid: d11a76f6f4ee4b7409213671e8761394, type: 2}

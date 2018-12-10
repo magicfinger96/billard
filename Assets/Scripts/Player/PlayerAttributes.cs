@@ -46,6 +46,8 @@ public class PlayerAttributes : MonoBehaviour {
     #endregion
     #region LevelAndExperienceMethods
 
+    public GUIManager guiManager;
+
     // Method allowing to add experience of the player
     // If the player has enough experience, he'll automatically
     //  level up.
@@ -60,8 +62,13 @@ public class PlayerAttributes : MonoBehaviour {
 
             levelText.text = level.ToString();
         }
+        bool wasActive = guiManager.HUPIsActive();
+        guiManager.ShowHUDPlayer();
         barProgress.UpdateBar(amountToLevelUp, xp);
-
+        if(!wasActive)
+        {
+            guiManager.HideHUDPlayer();
+        }
     }
     #endregion
 

@@ -22,9 +22,9 @@ MonoBehaviour:
     gr\xE2ce \xE0 la balle fonc\xE9e. Un seul trou avec un arceau est disponible \xE0
     la fois pour rentrer la balle."
   - "Tu remarqueras aussi que pour les trous non utilis\xE9s, on place des piliers
-    pour g\xE9ner le joueur et rendre cela plus compliqu\xE9 encore, quand je te dis
-    que \xE7a ne s'apprend pas en un jour ahah."
-  - "Tu remarqueras que les bords  et les piliers sont utilisables pour des rebonds,
+    pour compliquer la t\xE2che du joueur et rendre cela plus compliqu\xE9 encore,
+    quand je te dis que \xE7a ne s'apprend pas en un jour ahah."
+  - "Il faut savoir que les bords  et les piliers sont utilisables pour des rebonds,
     ils sont recouverts d'un fluide que je ne connais pas et qui permet de superbement
     rebondir m\xEAme sur le bois."
   - "Finalement, le but est de rentrer les trois balles avec le moins de coup possible.

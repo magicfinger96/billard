@@ -15,9 +15,9 @@ MonoBehaviour:
   isQuestAttached: 0
   isFinalQuestDiscussion: 0
   content:
-  - "Oh non pas vraiment, je sais que le propri\xE9taires de l'auberge l'a achet\xE9
-    il y a un petit moment et qu'il passe maintenant ces journ\xE9es \xE0 y jouer."
-  - 'Il raconte que c''est la grande tandance en ville et que tout le monde devrait
+  - "Oh non pas vraiment, je sais que le propri\xE9taire de l'auberge l'a achet\xE9
+    il y a un petit moment et qu'il passe maintenant ses journ\xE9es \xE0 y jouer."
+  - 'Il raconte que c''est la grande tendance en ville et que tout le monde devrait
     essayer.. '
   - "Personnellement, \xE7a ne m'int\xE9resse pas du tout mais je peux comprendre
     l'engouement."

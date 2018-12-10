@@ -2694,6 +2694,7 @@ GameObject:
   - component: {fileID: 85487947}
   - component: {fileID: 85487946}
   - component: {fileID: 85487945}
+  - component: {fileID: 85487948}
   m_Layer: 10
   m_Name: NPC_Robert_Barman
   m_TagString: NPC
@@ -2743,6 +2744,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: -314.141, z: -0.08800001}
+--- !u!114 &85487948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 85487944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccb9ee083470e3b42b8809114c52abe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questAttached: {fileID: 11400000, guid: ed3274d5dd535a0489f940df3c61575b, type: 2}
+  objectiveAttached: {fileID: 11400000, guid: c8102270ef9ddf44eb3e185243a13063, type: 2}
+  playerQuestManager: {fileID: 1234628656}
+  shouldDissapearOnInteract: 0
+  hoopAttached: 0
 --- !u!1 &87615325
 GameObject:
   m_ObjectHideFlags: 0
@@ -14698,6 +14715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c32e00e4e93fd8c47bce0440bb5e03d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sourceFireplace: {fileID: 1915513346}
   UIPanelMenu: {fileID: 118736402}
   UIPanel: {fileID: 559053919}
   ball: {fileID: 1407692235}
@@ -35010,9 +35028,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 1.8
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!114 &1234628655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35026,6 +35044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelText: {fileID: 339349648}
   barProgress: {fileID: 2101814965}
+  guiManager: {fileID: 877856086}
   speedForward: 1.5
   speedBackward: 0.8
   rotationSpeed: 1

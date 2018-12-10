@@ -52,6 +52,10 @@ public class InteractableNPC : MonoBehaviour, Interactable
 
     public void Interact()
     {
+        if(GetComponent<InteractableQuest>() != null)
+        {
+            GetComponent<InteractableQuest>().Interact();
+        }
         manager.SetCurrentSpeaker(this);
     }
 

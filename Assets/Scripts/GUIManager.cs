@@ -40,6 +40,11 @@ public class GUIManager : MonoBehaviour {
     {
         hudPlayer.SetActive(false);
     }
+
+    public bool HUPIsActive()
+    {
+        return hudPlayer.activeSelf;
+    }
     #endregion
 
     // Use this for initialization

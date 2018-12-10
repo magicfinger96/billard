@@ -8,6 +8,10 @@ namespace Pool
 
     public class Main : MonoBehaviour
     {
+        [SerializeField]
+        private AudioSource sourceFireplace;
+        private float sourceVolumeSave;
+
         private bool onGame;
         private bool isPaused;
         [SerializeField]
@@ -134,6 +138,7 @@ namespace Pool
 
         public void leaveGame()
         {
+            sourceFireplace.volume = sourceVolumeSave;
             Cursor.visible = false;
             onGame = false;
             GameObject.Find("Canvas").GetComponent<GUIManager>().ShowInteractableTextContent();
@@ -209,6 +214,8 @@ namespace Pool
 
         public void loadGame()
         {
+            sourceVolumeSave = sourceFireplace.volume;
+            sourceFireplace.volume = 0.09f;
             Cursor.visible = true;
             onGame = true;
             player.SetActive(false);

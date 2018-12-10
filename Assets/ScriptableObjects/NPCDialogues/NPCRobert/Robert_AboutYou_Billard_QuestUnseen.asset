@@ -21,19 +21,19 @@ MonoBehaviour:
   - "Pour faire simple, tu as 3 boules claires que tu dois rentrer dans les trous
     gr\xE2ce \xE0 la balle fonc\xE9e. Un seul trou avec un arceau est disponible \xE0
     la fois pour rentrer la balle."
-  - "Pour faire simple, tu as 3 boules claires que tu dois rentrer dans les trous
-    gr\xE2ce \xE0 la balle fonc\xE9e. Un seul trou avec un arceau est disponible \xE0
-    la fois pour rentrer la balle."
   - "Tu remarqueras aussi que pour les trous non utilis\xE9s, on place des piliers
-    pour g\xE9ner le joueur et rendre cela plus compliqu\xE9 encore, quand je te dis
-    que \xE7a ne s'apprend pas en un jour ahah."
+    pour compliquer la t\xE2che du joueur et rendre cela plus compliqu\xE9 encore,
+    quand je te dis que \xE7a ne s'apprend pas en un jour ahah."
+  - "Il faut savoir que les bords  et les piliers sont utilisables pour des rebonds,
+    ils sont recouverts d'un fluide que je ne connais pas et qui permet de superbement
+    rebondir m\xEAme sur le bois."
   - "Finalement, le but est de rentrer les trois balles avec le moins de coup possible.
     On raconte qu'un joueur appel\xE9 Karl \xE0 r\xE9ussi un 3 coups un jour, mais
     je ne l'ai jamais vu de mes propres yeux."
   - "Voila de mani\xE8re tr\xE8s rapide. Comme tu peux le voir, les r\xE8gles sont
     tr\xE8s simples, mais la maitrise prend des ann\xE9es et ce n'est pas demain la
     veille que tu feras un trois coups ahahah."
-  - "Tu as l'air int\xE9ress\xE9 dis donc, tu sais quoi, trouves l'arceau \xE0 l'\xE9tage,
+  - "Tu as l'air int\xE9ress\xE9 dis donc, tu sais quoi, trouve l'arceau \xE0 l'\xE9tage,
     et va t'entrainer, tu verras c'est super divertissant !"
   relatedDiscussions:
   - {fileID: 11400000, guid: a7e8b5a3d1895454192320d6d68c7c9a, type: 2}
