@@ -153,6 +153,7 @@ namespace Pool
         public void init(bool changeTarget)
         {
             nbHits = 0;
+            stopAllBalls();
             textRemainingBalls.text = 3 + " balles restantes";
             nbHitsText.text = "Nombre de coups: 0";
             nbHitsText.gameObject.SetActive(true);
@@ -160,7 +161,6 @@ namespace Pool
             endText.gameObject.SetActive(false);
             cameraPool.GetComponent<CameraController>().makeMoveLeft(false);
             cameraPool.GetComponent<CameraController>().makeMoveRight(false);
-            cameraPool.GetComponent<CameraController>().showNearView();
             itsEnd = false;
             UIPanel.gameObject.SetActive(true);
             ball.GetComponent<BallMovement>().stop();
@@ -194,7 +194,7 @@ namespace Pool
             cameraPool.GetComponent<CameraController>().reinit();
             chooseIntensity = false;
             intensity.gameObject.SetActive(false);
-
+            
             UnPause();
         }
 
@@ -256,7 +256,7 @@ namespace Pool
                     Ray ray = cameraPool.ScreenPointToRay(Input.mousePosition);
                     if (Physics.Raycast(ray, out hit))
                     {
-                        if ((hit.collider.gameObject.name == "Table" || hit.collider.transform.IsChildOf(cornerGroup.transform)
+                        if ((hit.collider.gameObject.name == "Borders" || hit.collider.gameObject.name == "Bed" || hit.collider.transform.IsChildOf(cornerGroup.transform)
                             || hit.collider.transform.IsChildOf(holeFillerGroup.transform) 
                             || hit.collider.transform.IsChildOf(ballGroup.transform)) && noBallIsMoving())
                         {
