@@ -357,10 +357,11 @@ namespace Pool
 
         public void Pause()
         {
+            intensity.gameObject.SetActive(false);
             Time.timeScale = 0f; //pause the game
             increaseSpeed = false;
             isPaused = true;
-            nbHitsText.gameObject.SetActive(false);
+            //nbHitsText.gameObject.SetActive(false);
             UIPanelMenu.gameObject.SetActive(true); //turn on the pause menu
             pauseAllSounds(true);
         }
