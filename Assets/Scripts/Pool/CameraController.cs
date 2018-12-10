@@ -28,7 +28,7 @@ public class CameraController : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
         posAbove = new Vector3(-7.78f, 8.22f, 22.33f);
         rotationAbove = Quaternion.Euler(90.22699f, -90.93201f, 89.16f);
         defaultPos = transform.localPosition;
@@ -41,6 +41,7 @@ public class CameraController : MonoBehaviour {
     {
         rotationNear = Quaternion.Euler(51.997f, -90.93001f, 0f);
         offset = new Vector3(2.4f, 1.7f, 10.7f) - ball.transform.position;
+        Debug.Log("OFFSET: "+offset);
         switchAbove = false;
         switchNear = false;
         zoomInOut = Vector3.zero;
@@ -137,6 +138,7 @@ public class CameraController : MonoBehaviour {
         switchAbove = false;
         switchNear = true;
         startRotation = transform.localRotation;
+        Debug.Log("Position: "+transform.position); // 2 1.2 10.7  ->  2.9 0 9
         startPosition = transform.position;
         startingLerping = Time.time;
         moveRight = false;

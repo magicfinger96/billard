@@ -18,6 +18,10 @@ namespace Pool
         protected AudioSource touchingHoleFillerSource;
         [SerializeField]
         protected AudioSource touchingBallSource;
+        [SerializeField]
+        protected AudioClip touchingCorner;
+        [SerializeField]
+        protected AudioSource touchingCornerSource;
 
         protected float volLowRange = .5f;
         protected float volHighRange = 1.0f;
@@ -31,6 +35,8 @@ namespace Pool
         protected GameObject ballGroup;
         [SerializeField]
         protected GameObject holeFillerGroup;
+        [SerializeField]
+        protected GameObject cornersGroup;
 
         void Awake()
         {
@@ -86,12 +92,14 @@ namespace Pool
                 source.Pause();
                 touchingBallSource.Pause();
                 touchingHoleFillerSource.Pause();
+                touchingCornerSource.Pause();
             }
             else
             {
                 source.UnPause();
                 touchingBallSource.UnPause();
                 touchingHoleFillerSource.UnPause();
+                touchingCornerSource.UnPause();
             }
         }
 
@@ -108,6 +116,8 @@ namespace Pool
             isPlayingTouchingHoleSound = false;
             touchingHoleFillerSource.Stop();
             StopCoroutine("makeTouchingHoleFillerSound");
+
+            touchingCornerSource.Stop();
 
         }
 
@@ -129,22 +139,29 @@ namespace Pool
 
         void OnCollisionEnter(Collision col)
         {
-            if (col.gameObject.name == "Bottom" && !isPlayingSikingNoise)
-            {
-                fellInHole = true;
-                isPlayingSikingNoise = true;
-                StartCoroutine("makeSikingNoise");
+            if (!game.isPausedFct() && game.isOnGame()) {
+                if (col.gameObject.name == "Bottom" && !isPlayingSikingNoise)
+                {
+                    fellInHole = true;
+                    isPlayingSikingNoise = true;
+                    StartCoroutine("makeSikingNoise");
 
-            } else if ((col.gameObject.name == "Ball" || col.gameObject.transform.IsChildOf(ballGroup.transform)) && !isPlayingTouchingBallSound)
-            {
-                isPlayingTouchingBallSound = true;
-                touchingBallSource.volume = (rb.velocity.magnitude);
-                StartCoroutine("makeTouchingBallSound");
-            } else if ( col.gameObject.transform.IsChildOf(holeFillerGroup.transform) && !isPlayingTouchingHoleSound)
-            {
-                isPlayingTouchingHoleSound = true;
-                touchingHoleFillerSource.volume = rb.velocity.magnitude;
-                StartCoroutine("makeTouchingHoleFillerSound");
+                } else if ((col.gameObject.name == "Ball" || col.gameObject.transform.IsChildOf(ballGroup.transform)) && !isPlayingTouchingBallSound)
+                {
+                    isPlayingTouchingBallSound = true;
+                    touchingBallSource.volume = (rb.velocity.magnitude);
+                    StartCoroutine("makeTouchingBallSound");
+                } else if (col.gameObject.transform.IsChildOf(holeFillerGroup.transform) && !isPlayingTouchingHoleSound)
+                {
+                    isPlayingTouchingHoleSound = true;
+                    touchingHoleFillerSource.volume = rb.velocity.magnitude;
+                    StartCoroutine("makeTouchingHoleFillerSound");
+                } else if (col.gameObject.transform.IsChildOf(cornersGroup.transform) || col.gameObject.name == "Borders")
+                {
+                    float vol = Random.Range(volLowRange, volHighRange);
+                    touchingCornerSource.volume = (rb.velocity.magnitude);
+                    touchingCornerSource.PlayOneShot(touchingCorner, vol);
+                }
             }
         }
     }
