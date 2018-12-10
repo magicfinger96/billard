@@ -6,14 +6,17 @@ using UnityEngine.UI;
 
 public class QuestResumeButton : EventTrigger
 {
+
     private float alphaOnMouseHover = 73.0f / 255.0f;
     private PlayerQuestManager playerQuestManager;
+    private AudioSource sourceClick;
     private string nameQuestAttached;
 
     private void Start()
     {
         GetComponent<Image>().CrossFadeAlpha(0f, 0f, true);
         playerQuestManager = GameObject.FindGameObjectWithTag("PlayerMain").GetComponent<PlayerQuestManager>();
+        sourceClick = GetComponent<AudioSource>();
         nameQuestAttached = GetComponentsInChildren<Text>()[0].text;
     }
 
@@ -29,6 +32,7 @@ public class QuestResumeButton : EventTrigger
 
     public override void OnPointerDown(PointerEventData data)
     {
+        sourceClick.Play();
         playerQuestManager.BuildGUIForDetailedQuest(nameQuestAttached);
     }
 }

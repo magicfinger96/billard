@@ -21,8 +21,8 @@ public class InteractableBillard : MonoBehaviour, Interactable {
 
     public void Interact()
     {
-        poolMain.loadGame();
-        /*if (player.HasHoop)
+        //poolMain.loadGame();
+        if (player.HasHoop)
         {
             poolMain.loadGame(); //REMETTRE APRES 
         }
@@ -33,7 +33,7 @@ public class InteractableBillard : MonoBehaviour, Interactable {
             textInfo.CrossFadeAlpha(0, 0.0f, false);
             textInfo.CrossFadeAlpha(1, 1.0f, false);
             StartCoroutine(FadeOutTextQuestSucceed());
-        }*/
+        }
     }
 
     IEnumerator FadeOutTextQuestSucceed()

@@ -11,6 +11,8 @@ namespace Pool
         [SerializeField]
         private AudioSource sourceFireplace;
         private float sourceVolumeSave;
+        [SerializeField]
+        private PlayerAttributes playerAttributs;
 
         private bool onGame;
         private bool isPaused;
@@ -125,6 +127,7 @@ namespace Pool
             cameraPool.GetComponent<CameraController>().playWinSound();
             endText.gameObject.SetActive(true);
             itsEnd = true;
+            playerAttributs.Xp += Mathf.Max(50 - nbHits, 0);
         }
 
         // Permet de changer de cible
