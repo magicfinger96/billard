@@ -64,6 +64,7 @@ namespace Pool
             float vol = Random.Range(volLowRange, volHighRange);
             source.PlayOneShot(sinking, vol);
             yield return new WaitWhile(() => source.isPlaying);
+            //Debug.Log("active: " + rb.name);
             fellInHole = true;
             isPlayingSikingNoise = false;
         }
@@ -108,6 +109,7 @@ namespace Pool
             source.Stop();
             StopCoroutine("makeSikingNoise");
             isPlayingSikingNoise = false;
+            fellInHole = false;
 
             touchingBallSource.Stop();
             StopCoroutine("makeTouchingBallSound");
@@ -135,6 +137,7 @@ namespace Pool
         public void reinitFall()
         {
             fellInHole = false;
+            //Debug.Log("desactive: "+rb.name);
         }
 
         void OnCollisionEnter(Collision col)
@@ -142,7 +145,6 @@ namespace Pool
             if (!game.isPausedFct() && game.isOnGame()) {
                 if (col.gameObject.name == "Bottom" && !isPlayingSikingNoise)
                 {
-                    fellInHole = true;
                     isPlayingSikingNoise = true;
                     StartCoroutine("makeSikingNoise");
 

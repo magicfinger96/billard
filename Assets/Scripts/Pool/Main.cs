@@ -179,8 +179,6 @@ namespace Pool
                 child.GetComponent<OtherBallsMovement>().stop();
             }
 
-            reinitAllFall();
-
             foreach (GameObject h in holeFillers)
             {
                 h.SetActive(true);
@@ -208,8 +206,19 @@ namespace Pool
         {
             stopAllSounds();
             stopAllBalls();
-            init(true);
+            UnPause();
+            StartCoroutine(reinitBeforeRestart());
+            
 
+        }
+
+        // Wait the end of the loop of the others objects to avoid issue
+        IEnumerator reinitBeforeRestart()
+        {
+            yield return 0;
+            yield return 0;
+            yield return 0;
+            init(true);
         }
 
         public void loadGame()
