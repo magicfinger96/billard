@@ -29,6 +29,8 @@ namespace Pool
         [SerializeField]
         private Text endText;
         [SerializeField]
+        private Text nbHitsText;
+        [SerializeField]
         private GameObject hoop;
         private bool itsEnd;
         [SerializeField]
@@ -44,6 +46,7 @@ namespace Pool
         [SerializeField]
         private GameObject ballGroup;
         private GameObject line;
+        private int nbHits;
 
 
         void Start()
@@ -115,6 +118,7 @@ namespace Pool
         public void end()
         {
             Pause();
+            cameraPool.GetComponent<CameraController>().playWinSound();
             endText.gameObject.SetActive(true);
             itsEnd = true;
         }
@@ -137,6 +141,7 @@ namespace Pool
             player.SetActive(true);
             init(false);
             line.SetActive(false);
+            nbHitsText.gameObject.SetActive(false);
             UIPanelMenu.gameObject.SetActive(false);
             UIPanel.gameObject.SetActive(false);
             Time.timeScale = 1f;
@@ -147,7 +152,11 @@ namespace Pool
         // Initialize the game, changeTarget true if the target has to be changed
         public void init(bool changeTarget)
         {
-            reinitAllFall();
+            nbHits = 0;
+            textRemainingBalls.text = 3 + " balles restantes";
+            nbHitsText.text = "Nombre de coups: 0";
+            nbHitsText.gameObject.SetActive(true);
+            cameraPool.GetComponent<CameraController>().stopSound();
             endText.gameObject.SetActive(false);
             cameraPool.GetComponent<CameraController>().makeMoveLeft(false);
             cameraPool.GetComponent<CameraController>().makeMoveRight(false);
@@ -163,6 +172,8 @@ namespace Pool
                 child.gameObject.SetActive(true);
                 child.GetComponent<OtherBallsMovement>().stop();
             }
+
+            reinitAllFall();
 
             foreach (GameObject h in holeFillers)
             {
@@ -276,6 +287,8 @@ namespace Pool
                         ball.GetComponent<BallMovement>().move();
                         intensity.gameObject.SetActive(false);
                         line.SetActive(false);
+                        nbHits++;
+                        nbHitsText.text = "Nombre de coups: "+nbHits;
                     }
 
                     if (chooseIntensity)
@@ -326,6 +339,7 @@ namespace Pool
             Time.timeScale = 0f; //pause the game
             increaseSpeed = false;
             isPaused = true;
+            nbHitsText.gameObject.SetActive(false);
             UIPanelMenu.gameObject.SetActive(true); //turn on the pause menu
             pauseAllSounds(true);
         }
@@ -340,6 +354,7 @@ namespace Pool
         {
             isPaused = false;
             UIPanelMenu.gameObject.SetActive(false); //turn off pause menu
+            nbHitsText.gameObject.SetActive(true);
             Time.timeScale = 1f; //resume game
             pauseAllSounds(false);
         }

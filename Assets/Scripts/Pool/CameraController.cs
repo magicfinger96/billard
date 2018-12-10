@@ -21,6 +21,11 @@ public class CameraController : MonoBehaviour {
     private Vector3 defaultPos;
     private Quaternion defaultRotation;
 
+    [SerializeField]
+    protected AudioClip winSound;
+    [SerializeField]
+    protected AudioSource winSoundSource;
+
 
     // Use this for initialization
     void Start () {
@@ -98,6 +103,17 @@ public class CameraController : MonoBehaviour {
             }
         
 	}
+
+    // Play the win sound
+    public void playWinSound()
+    {
+        winSoundSource.PlayOneShot(winSound, 1f);
+    }
+
+    public void stopSound()
+    {
+        winSoundSource.Stop();
+    }
 
     // Show the game above the pool
     public void showAboveView()
