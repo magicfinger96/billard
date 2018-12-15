@@ -22,6 +22,10 @@ namespace Pool
         protected AudioClip touchingCorner;
         [SerializeField]
         protected AudioSource touchingCornerSource;
+        [SerializeField]
+        protected AudioClip touchingHoop;
+        [SerializeField]
+        protected AudioSource touchingHoopSource;
 
         protected float volLowRange = .5f;
         protected float volHighRange = 1.0f;
@@ -163,6 +167,11 @@ namespace Pool
                     float vol = Random.Range(volLowRange, volHighRange);
                     touchingCornerSource.volume = (rb.velocity.magnitude);
                     touchingCornerSource.PlayOneShot(touchingCorner, vol);
+                } else if (col.gameObject.name == "hoop")
+                {
+                    float vol = Random.Range(volLowRange, volHighRange);
+                    touchingHoopSource.volume = (rb.velocity.magnitude);
+                    touchingHoopSource.PlayOneShot(touchingHoop, vol);
                 }
             }
         }
