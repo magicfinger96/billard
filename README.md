@@ -8,6 +8,8 @@
   * Ajout des sons: de l'arceau, d'un cylindre, des bords, d'une balle (quand elle tombe dans le trou et collision avec une autre)
   * GamePlay
   * UI
+  * Paramètrage de la bounciness, drag etc
+  * Contrôle de la caméra
 
 # Nicolas
 * Auberge : 
