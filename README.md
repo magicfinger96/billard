@@ -6,7 +6,8 @@
 * Billard :
   * Création du modèle du billard sur Blender: séparation en 2 objets du tapis avec le reste du billard pour appliquer des physicals matérials différents.
   * Ajout des sons: de l'arceau, d'un cylindre, des bords, d'une balle (quand elle tombe dans le trou et collision avec une autre)
-  * 
+  * GamePlay
+  * UI
 
 # Nicolas
 * Auberge : 
