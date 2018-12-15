@@ -304,7 +304,9 @@ namespace Pool
                     if (chooseIntensity && Input.GetMouseButtonUp(0) && noBallIsMoving())
                     {
                         chooseIntensity = false;
-                        ball.GetComponent<BallMovement>().savePrevPos();
+                        if (ball.transform.localPosition.y >= 3f) {
+                            ball.GetComponent<BallMovement>().savePrevPos();
+                        }
                         ball.GetComponent<BallMovement>().move();
                         intensity.gameObject.SetActive(false);
                         line.SetActive(false);
