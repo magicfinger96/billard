@@ -1,8 +1,8 @@
 # Pool Game
 ![alt text](https://github.com/magicfinger96/billard/blob/master/img/img4.PNG)
-![alt text](https://github.com/magicfinger96/billard/blob/master/img/img3.PNG)
+![alt text](https://github.com/magicfinger96/billard/blob/master/img/img3.png)
 ![alt text](https://github.com/magicfinger96/billard/blob/master/img/img2.PNG)
-![alt text](https://github.com/magicfinger96/billard/blob/master/img/img1.PNG)
+![alt text](https://github.com/magicfinger96/billard/blob/master/img/img1.png)
 
 # Tâches
 
